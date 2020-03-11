@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/yikkai95/.zsh_functions'
+let g:netrw_dirhist_7='/Users/yikkai95/.oh-my-zsh/plugins/fzf'
+let g:netrw_dirhist_6='/Users/yikkai95/.zsh'
+let g:netrw_dirhist_5='/Users/yikkai95/.tmux/plugins'
+let g:netrw_dirhist_4='/Users/yikkai95/.tmux/plugins/dracula.tmux'
+let g:netrw_dirhist_3='/Users/yikkai95/.tmux/plugins/nord-tmux/src'
+let g:netrw_dirhist_2='/Users/yikkai95/.tmux/plugins/nord-tmux'
+let g:netrw_dirhist_1='/Users/yikkai95/.tmux/plugins/dracula.tmux'
+let g:netrw_dirhist_0='/Users/yikkai95/.tmux/plugins'
+let g:netrw_dirhist_9='/Users/yikkai95/.tmux'

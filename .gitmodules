@@ -1,0 +1,3 @@
+[submodule "vifm/.config/vifm/colors"]
+	path = vifm/.config/vifm/colors
+	url = https://github.com/vifm/vifm-colors

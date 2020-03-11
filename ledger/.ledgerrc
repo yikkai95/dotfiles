@@ -1,0 +1,8 @@
+/* --explicit */
+/* --pedantic */
+/* --file ~/Documents/Ledger/accounts.ledger */
+/* --file ~/Documents/Ledger/Auto-Transaction/auto-all.ledger */
+/* --file ~/Documents/Ledger/Auto-Transaction/auto-main.ledger */
+/* --file ~/Documents/Ledger/Auto-Transaction/auto-obligation.ledger */
+/* --file ~/Documents/Ledger/budget.ledger */
+--file ~/Documents/Ledger/2020/ledger-2020.ledger

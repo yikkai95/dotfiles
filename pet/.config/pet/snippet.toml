@@ -1,0 +1,54 @@
+[[snippets]]
+  description = "grep find file"
+  command = "grep -rl <word> ."
+  output = ""
+
+[[snippets]]
+  description = "youtube download music"
+  command = "youtube-dl -x --audio-format mp3 <youtube-url>"
+  output = ""
+
+[[snippets]]
+  description = "rg find content"
+  command = "fif <search_term> | xargs -o vim"
+  output = ""
+
+[[snippets]]
+  description = "sh echo path"
+  command = "echo -e ${PATH//:/\\\\n}"
+  output = ""
+
+[[snippets]]
+  description = "hledger monthly budget"
+  command = "hledger bal -MB date:thismonth --pretty-table --budget --drop 1 not:Assets not:Income"
+  output = ""
+
+[[snippets]]
+  description = "postgres start server"
+  command = "pg_ctl -D /usr/local/var/postgres start\\n"
+  output = ""
+
+[[snippets]]
+  description = "gist"
+  command = "gister search | awk -F '/' '{print $NF}' | fzf | xargs -I _ rg --files -g \"_\" ~/Gist/tree | xargs -o vim"
+  output = ""
+
+[[snippets]]
+  description = "git remove unused branches"
+  command = "git branch > /tmp/branches && vim /tmp/branches && xargs git branch -D < /tmp/branches"
+  output = ""
+
+[[snippets]]
+  description = "search bookmarks"
+  command = "buku -f 3 -p  | fzf | awk '{print $1}' | xargs -I _ buku -o _"
+  output = ""
+
+[[snippets]]
+  description = "sync document with google drive"
+  command = "rclone sync ~/Documents google:Documents --drive-skip-gdocs --verbose"
+  output = ""
+
+[[snippets]]
+  description = "Weekly Expense Report"
+  command = "hledger reg exp -p thisweek"
+  output = ""
