@@ -193,7 +193,7 @@ bindkey -v "^?" backward-delete-char
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_CTRL_T_COMMAND='ag --ignore-dir={archive,arch,ios,android,tmp,Repo,node_modules,venv,.git,go,.stack,Library} -g ""'
+export FZF_CTRL_T_COMMAND='rg --hidden --files'
 export FZF_ALT_C_COMMAND='fd -i -t d .'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=dark
@@ -201,8 +201,13 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 '
 _fzf_compgen_dir() {
-  fd --hidden --follow . "$1"
+    fd --hidden --follow . "$1"
 }
+
+_fzf_compgen_path() {
+    rg --hidden --files "$1"
+}
+
 export LINES=10
 
 # user functions
