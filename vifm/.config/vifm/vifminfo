@@ -34,309 +34,537 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/Users/yikkai95/dotfiles/.config
-	alacritty
-1
-d/Users/yikkai95/dotfiles
-	alacritty
-2
-d/Users/yikkai95/dotfiles/alacritty
-	.config
-1
-d/Users/yikkai95/dotfiles
-	hledger-iadd
-3
-d/Users/yikkai95/dotfiles/hledger-iadd
-	.config
-1
-d/Users/yikkai95/dotfiles
-	htop
-4
-d/Users/yikkai95/dotfiles/htop
-	.config
-1
-d/Users/yikkai95/dotfiles
-	karabiner
+d/Users/yikkai95/go/pkg/mod/go.starlark.net@v0.0.0-20190702223751-32f345186213
+	..
+0
+d/Users/yikkai95/go/pkg/mod
+	golang.org
 5
-d/Users/yikkai95/dotfiles/karabiner
-	.config
+d/Users/yikkai95/go/pkg/mod/golang.org
+	..
+0
+d/Users/yikkai95/go/pkg/mod
+	golang.org
+5
+d/Users/yikkai95/go/pkg/mod/golang.org
+	x
 1
-d/Users/yikkai95/dotfiles
-	newsboat
-6
-d/Users/yikkai95/dotfiles/newsboat
-	.config
+d/Users/yikkai95/go/pkg/mod/golang.org/x
+	arch@v0.0.0-20190927153633-4e8777c89be4
 1
-d/Users/yikkai95/dotfiles
+d/Users/yikkai95/go/pkg/mod/golang.org
+	x
+1
+d/Users/yikkai95/go/pkg/mod
+	golang.org
+5
+d/Users/yikkai95/Project/dotfiles/.config/nvim
+	coc-extensions
+2
+d/Users/yikkai95/Project/dotfiles/.config
 	nvim
-7
-d/Users/yikkai95/dotfiles/nvim
+11
+d/Users/yikkai95/Project/dotfiles
 	.config
 1
-d/Users/yikkai95/dotfiles
-	pet
-8
-d/Users/yikkai95/dotfiles/pet
-	.config
-1
-d/Users/yikkai95/dotfiles
-	rclone
-9
-d/Users/yikkai95/dotfiles/rclone
-	.config
-1
-d/Users/yikkai95/dotfiles
-	vifm
-10
-d/Users/yikkai95/dotfiles/vifm
-	.config
-1
-d/Users/yikkai95/dotfiles
-	alacritty
-2
-d/Users/yikkai95/dotfiles/alacritty
-	.config
-1
-d/Users/yikkai95/dotfiles/alacritty/.config
-	alacritty
-1
-d/Users/yikkai95/dotfiles/alacritty
-	.config
-1
-d/Users/yikkai95/dotfiles
-	hledger-iadd
-3
-d/Users/yikkai95/dotfiles/hledger-iadd
-	.config
-1
-d/Users/yikkai95/dotfiles/hledger-iadd/.config
-	hledger-iadd
-1
-d/Users/yikkai95/dotfiles/hledger-iadd
-	.config
-1
-d/Users/yikkai95/dotfiles
-	htop
-4
-d/Users/yikkai95/dotfiles/htop
-	.config
-1
-d/Users/yikkai95/dotfiles/htop/.config
-	htop
-1
-d/Users/yikkai95/dotfiles/htop
-	.config
-1
-d/Users/yikkai95/dotfiles
-	karabiner
-5
-d/Users/yikkai95/dotfiles/karabiner
-	.config
-1
-d/Users/yikkai95/dotfiles/karabiner/.config
-	karabiner
-1
-d/Users/yikkai95/dotfiles/karabiner
-	.config
-1
-d/Users/yikkai95/dotfiles
-	newsboat
+d/Users/yikkai95/Project/dotfiles/.config
+	nvim
+11
+d/Users/yikkai95/Project/dotfiles/.config/nvim
+	spell
 6
-d/Users/yikkai95/dotfiles/newsboat
-	.config
-1
-d/Users/yikkai95/dotfiles
-	pet
-8
-d/Users/yikkai95/dotfiles/pet
-	.config
-1
-d/Users/yikkai95/dotfiles/pet/.config
-	pet
-1
-d/Users/yikkai95/dotfiles/pet
-	.config
-1
-d/Users/yikkai95/dotfiles
-	rclone
-9
-d/Users/yikkai95/dotfiles/rclone
-	.config
-1
-d/Users/yikkai95/dotfiles/rclone/.config
-	rclone
-1
-d/Users/yikkai95/dotfiles/rclone
-	.config
-1
-d/Users/yikkai95/dotfiles
-	vifm
-10
-d/Users/yikkai95/dotfiles/vifm
-	.config
-1
-d/Users/yikkai95/dotfiles/vifm/.config
-	vifm
-1
-d/Users/yikkai95/dotfiles/vifm
-	.config
-1
-d/Users/yikkai95/dotfiles
-	vifm
-10
-d/Users/yikkai95/dotfiles/vifm
-	.config
-1
-d/Users/yikkai95/dotfiles/vifm/.config
-	vifm
-1
-d/Users/yikkai95/dotfiles/vifm
-	.config
-1
-d/Users/yikkai95/dotfiles
-	vifm
-9
-d/Users/yikkai95
-	dotfiles
-37
-d/Users/yikkai95/dotfiles
-	vim
-10
+d/Users/yikkai95/dotfiles/vim/.vim/plugged
+	..
+0
+d/Users/yikkai95/dotfiles/vim/.vim
+	plugged
+2
 d/Users/yikkai95/dotfiles/vim
 	.vim
 1
 d/Users/yikkai95/dotfiles
-	fd
-2
-d/Users/yikkai95/dotfiles/fd
-	.fdignore
-1
-d/Users/yikkai95/dotfiles
-	git
-3
-d/Users/yikkai95/dotfiles/git
-	.gitconfig
-1
-d/Users/yikkai95/dotfiles
-	hledger
-4
-d/Users/yikkai95/dotfiles/hledger
-	.ledgerrc
-2
-d/Users/yikkai95/dotfiles
-	vim
-12
-d/Users/yikkai95/dotfiles/vim
-	.vimrc
-2
-d/Users/yikkai95/dotfiles
-	shell
-11
-d/Users/yikkai95/dotfiles/shell
-	.zshenv
-2
-d/Users/yikkai95/dotfiles
-	shell
-11
-d/Users/yikkai95/dotfiles/shell
-	.zshenv
-2
-d/Users/yikkai95/dotfiles
-	hledger
-4
-d/Users/yikkai95/dotfiles/hledger
-	.ledgerrc
-2
-d/Users/yikkai95/dotfiles
-	tmux
-12
-d/Users/yikkai95/dotfiles/tmux
-	.tmux.conf
-1
-d/Users/yikkai95/dotfiles
-	vim
-14
-d/Users/yikkai95/dotfiles/vim
-	.vimrc
-2
-d/Users/yikkai95/dotfiles
-	shell
-11
-d/Users/yikkai95/dotfiles/shell
-	.zshenv
-1
-d/Users/yikkai95/dotfiles
-	sh
-11
-d/Users/yikkai95/dotfiles/sh
-	.inputrc
-1
-d/Users/yikkai95/dotfiles
-	shell
-12
-d/Users/yikkai95/dotfiles/shell
-	.zshenv
-1
-d/Users/yikkai95/dotfiles
-	zsh
-15
-d/Users/yikkai95/dotfiles/zsh
-	..
-0
-d/Users/yikkai95/dotfiles
-	fzf
-3
-d/Users/yikkai95/dotfiles/fzf
-	fzf
-1
-d/Users/yikkai95/dotfiles
-	fzf
-3
-d/Users/yikkai95/dotfiles/fzf
-	..
-0
-d/Users/yikkai95/dotfiles
-	zsh
-16
-d/Users/yikkai95/dotfiles/zsh
-	..
-0
-d/Users/yikkai95/dotfiles
-	zsh
-16
-d/Users/yikkai95/dotfiles/zsh
-	..
-0
-d/Users/yikkai95/dotfiles
-	zsh
-16
-d/Users/yikkai95/dotfiles/zsh
-	..
-0
-d/Users/yikkai95/dotfiles
-	zsh
-16
-d/Users/yikkai95/dotfiles/zsh
-	.zshrc
-2
-d/Users/yikkai95/dotfiles
-	.zshenv
-17
+	.gitmodules
+19
 d/Users/yikkai95
-	.zshenv
-38
+	dotfiles
+25
 d/Users/yikkai95/dotfiles
-	zsh
-16
-d/Users/yikkai95/dotfiles/zsh
-	.zshrc
+	.gitmodules
+19
+d/Users/yikkai95/Project/pwk
+	node_modules
+5
+d/Users/yikkai95/Project/pwk/node_modules
+	react-native-vector-icons
+36
+d/Users/yikkai95/Project/pwk/node_modules/react-native-vector-icons
+	Fonts
+1
+d/Users/yikkai95/Project/pwk/node_modules/react-native-vector-icons/Fonts
+	Entypo.ttf
 2
-d/Users/yikkai95/dotfiles
-	fd
+d/Users/yikkai95/Project/pwkMobile
+	assets
+4
+d/Users/yikkai95/Project/pwkMobile/assets
+	fonts
+1
+d/Users/yikkai95/Project/pwkMobile/assets/fonts
+	ComicSansMS.ttf
+1
+d/Users/yikkai95/Project/pwkMobile/assets
+	fonts
+1
+d/Users/yikkai95/Project/pwkMobile
+	src
+7
+d/Users/yikkai95/Project/pwkMobile/src
+	assets
+2
+d/Users/yikkai95/Project/pwkMobile/src/assets
+	consonant
+1
+d/Users/yikkai95/Project/pwkMobile/src/assets/consonant
+	spelling
+1
+d/Users/yikkai95/Project/pwkMobile/src/assets/consonant/spelling
+	..
+0
+d/Users/yikkai95/Project/pwkMobile/src/assets/consonant
+	spelling
+1
+d/Users/yikkai95/Project/pwkMobile/src/assets
+	test.mp4
+3
+d/Users/yikkai95/Project/pwkMobile/src
+	assets
+2
+d/Users/yikkai95/Project/pwkMobile/src/assets
+	test.mp4
+3
+d/Users/yikkai95/Project/pwkMobile/src
+	assets
+2
+d/Users/yikkai95/Project/pwkMobile/src/assets
+	consonant
+1
+d/Users/yikkai95/Project/pwkMobile/src/assets/consonant
+	spelling
+1
+d/Users/yikkai95/Project/pwkMobile/src/assets/consonant/spelling
+	..
+0
+d/Users/yikkai95/Project/pwkMobile/src/assets/consonant
+	spelling
+1
+d/Users/yikkai95/Project/pwkMobile/src/assets
+	consonant
+1
+d/Users/yikkai95/Project/pwkMobile/src
+	reducers
+5
+d/Users/yikkai95/.local
+	share
+2
+d/Users/yikkai95/.local/share
+	vifm
+5
+d/Users/yikkai95/.local
+	share
+2
+d/Users/yikkai95
+	.rvm
+12
+d/Users/yikkai95/.rvm
+	config
+3
+d/Users/yikkai95
+	.shell.pre-oh-my-zsh
+32
+d/Users/yikkai95/Project
+	arch
+1
+d/Users/yikkai95/Project/arch
+	alacritty
+7
+d/Users/yikkai95/Project
+	arch
+1
+d/Users/yikkai95/Project/arch
+	kynetic-01
+7
+d/Users/yikkai95/Project/arch/kynetic-01
+	fyp
+4
+d/Users/yikkai95/Project/arch/kynetic-01/fyp
+	.git
+1
+d/Users/yikkai95/Project/arch/kynetic-01/fyp/.git
+	..
+0
+d/Users/yikkai95/Project/arch/kynetic-01/fyp
+	doc
+2
+d/Users/yikkai95/Project/arch/kynetic-01/fyp/doc
+	Project Guidelines
+1
+d/Users/yikkai95/Project/arch/kynetic-01/fyp/doc/Project Guidelines
+	..
+0
+d/Users/yikkai95/Project/arch/kynetic-01/fyp/doc
+	Project Guidelines
+1
+d/Users/yikkai95/Project/arch/kynetic-01/fyp
+	doc
+2
+d/Users/yikkai95/Project/arch/kynetic-01
+	fyp
+4
+d/Users/yikkai95/Project/arch
+	iCode
+5
+d/Users/yikkai95/Project/arch/iCode
+	lesson
+1
+d/Users/yikkai95/Project/arch/iCode/lesson
+	lesson-02
+1
+d/Users/yikkai95/Project/arch/iCode
+	lesson
+1
+d/Users/yikkai95/Project/arch
+	body-paint
+4
+d/Users/yikkai95/Project/arch/body-paint
+	Melaka 733 yearly.XLSX
+4
+d/Users/yikkai95/Project/arch
+	ark-be-template
+3
+d/Users/yikkai95/Project/arch/ark-be-template
+	..
+0
+d/Users/yikkai95/Project/arch
+	alacritty
+2
+d/Users/yikkai95/Project/arch/alacritty
+	..
+0
+d/Users/yikkai95/Project/arch
+	Proofpoint
+1
+d/Users/yikkai95/Project/arch/Proofpoint
+	..
+0
+d/Users/yikkai95/Project/arch
+	Proofpoint
+1
+d/Users/yikkai95/Project/arch/Proofpoint
+	KWS2
+1
+d/Users/yikkai95/Project/arch/Proofpoint/KWS2
+	.ignore
+7
+d/Users/yikkai95/Project/arch/Proofpoint
+	KWS2
+1
+d/Users/yikkai95/Project/arch
+	ark-be-template
+3
+d/Users/yikkai95/.Trash
+	dotfiles
+7
+d/Users/yikkai95/.Trash/dotfiles
+	.inputrc
+11
+d/Users/yikkai95/.Trash
+	local
+8
+d/Users/yikkai95
+	.vimrc
+34
+d/Users/yikkai95/Documents
+	Project
+1
+d/Users/yikkai95/Documents/Project
+	ark
+2
+d/Users/yikkai95/Documents/Project/ark
+	changes_required_on_user_api.md
+5
+d/Users/yikkai95/Documents/Project
+	ark
+2
+d/Users/yikkai95/Documents/Project/ark
+	changes_required_on_user_api.md
+5
+d/Users/yikkai95/Documents/Project
+	pwk
+4
+d/Users/yikkai95/Boostnote
+	notes
+2
+d/Users/yikkai95/Boostnote/notes
+	1a0a49e3-5829-4be0-87f4-64e974067f7f.cson
+5
+d/Users/yikkai95/Project/ledger/2020
+	..
+0
+d/Users/yikkai95/Project/ledger
+	2019
+3
+d/Users/yikkai95/Project/ledger/2019
+	budget.bak.ledger
+2
+d/Users/yikkai95/Project/ledger
+	2020
+4
+d/Users/yikkai95/Project/ledger/2020
+	..
+0
+d/Users/yikkai95/Project/ledger
+	2019
+3
+d/Users/yikkai95/Project/ledger/2019
+	budget.ledger
+3
+d/Users/yikkai95/Project/ledger
+	2020
+4
+d/Users/yikkai95/Project/ledger/2020
+	budget.ledger
 2
 d
 
 # Right window history (oldest to newest):
+D/Users/yikkai95/Project
+	pwkMobile
+9
+D/Users/yikkai95/Project/pwkMobile
+	src
+6
+D/Users/yikkai95/Project/pwkMobile/src
+	screens
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	Consonant
+1
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson01
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	Digraph
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Digraph
+	Lesson01
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	RControlledVowel
+5
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel
+	Lesson01
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel/Lesson01
+	..
+0
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel
+	Lesson01
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	ShortVowel
+6
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel
+	Lesson01
+1
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel/Lesson01
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel
+	Lesson02
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel/Lesson02
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel
+	Lesson03
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel/Lesson03
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel/Lesson04
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/ShortVowel
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	LongVowel
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson01
+1
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson01
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson02
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson02
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson03
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson03
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson04
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	LongVowel
+3
+D/Users/yikkai95/Project/pwkMobile/src
+	assets
+1
+D/Users/yikkai95/Project/pwkMobile
+	src
+6
+D/Users/yikkai95/Project/pwkMobile/src
+	components
+2
+D/Users/yikkai95/Project/pwkMobile/src/components
+	lessonFour.js
+1
+D/Users/yikkai95/Project/pwkMobile/src
+	components
+2
+D/Users/yikkai95/Project/pwkMobile/src/components
+	lessonThree.js
+3
+D/Users/yikkai95/Project/pwkMobile/src
+	components
+2
+D/Users/yikkai95/Project/pwkMobile
+	src
+6
+D/Users/yikkai95/Project/pwkMobile/src
+	screens
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	LongVowel
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson01
+1
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson01
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson02
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson02
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson03
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson03
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson03
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson03
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel/Lesson04
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/LongVowel
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	Consonant
+1
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson01
+1
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant/Lesson01
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson02
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant/Lesson02
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson03
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant/Lesson03
+	..
+0
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson02
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant/Lesson02
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson03
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant/Lesson03
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant/Lesson04
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/Consonant
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens
+	RControlledVowel
+5
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel
+	Lesson01
+1
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel/Lesson01
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel
+	Lesson02
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel/Lesson02
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel
+	Lesson03
+3
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel/Lesson03
+	index.js
+2
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel
+	Lesson04
+4
+D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel/Lesson04
+	index.js
+2
 D/Users/yikkai95/Project/pwkMobile/src/screens/RControlledVowel
 	Lesson04
 4
@@ -407,239 +635,30 @@ D/Users/yikkai95/Documents/Wiki/diary
 	2019-11-11.md
 23
 D/Users/yikkai95/Documents/Wiki
-	guide
-4
-D/Users/yikkai95/Documents
-	Wiki
-3
-D/Users/yikkai95
-	Project
-37
-D/Users/yikkai95/Project
-	dotfiles
-7
-D/Users/yikkai95/Project/dotfiles
-	.config
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	alacritty
-1
-D/Users/yikkai95/Project/dotfiles
-	.config
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	yarn
-15
-D/Users/yikkai95/Project/dotfiles/.config/yarn
-	global
-1
-D/Users/yikkai95/Project/dotfiles/.config/yarn/global
-	node_modules
-1
-D/Users/yikkai95/Project/dotfiles/.config/yarn
-	link
-2
-D/Users/yikkai95/Project/dotfiles/.config/yarn/link
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config/yarn
-	link
-2
-D/Users/yikkai95/Project/dotfiles/.config
-	karabiner
-8
-D/Users/yikkai95/Project/dotfiles/.config/karabiner
-	automatic_backups
-2
-D/Users/yikkai95/Project/dotfiles/.config
-	karabiner
-8
-D/Users/yikkai95/Project/dotfiles/.config/karabiner
-	automatic_backups
-2
-D/Users/yikkai95/Project/dotfiles/.config
-	htop
-7
-D/Users/yikkai95/Project/dotfiles/.config/htop
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config
-	coc
-4
-D/Users/yikkai95/Project/dotfiles/.config/coc
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config
-	configstore
-5
-D/Users/yikkai95/Project/dotfiles/.config/configstore
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config
-	configstore
-5
-D/Users/yikkai95/Project/dotfiles/.config/configstore
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config
-	hledger-iadd
+	how-to
 6
-D/Users/yikkai95/Project/dotfiles/.config/hledger-iadd
-	config.conf
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	alacritty
-1
-D/Users/yikkai95/Project/dotfiles/.config/alacritty
-	alacritty.yml
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	cfiles
-2
-D/Users/yikkai95/Project/dotfiles/.config/cfiles
-	scripts
-1
-D/Users/yikkai95/Project/dotfiles/.config/cfiles/scripts
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config/cfiles
-	preview
-3
-D/Users/yikkai95/Project/dotfiles/.config
-	cmus
-3
-D/Users/yikkai95/Project/dotfiles/.config/cmus
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config
-	cmus
-3
-D/Users/yikkai95/Project/dotfiles/.config/cmus
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config
-	cmus
-3
-D/Users/yikkai95/Project/dotfiles
-	.config
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	cmus
-3
-D/Users/yikkai95/Project/dotfiles/.config/cmus
-	playlists
-1
-D/Users/yikkai95/Project/dotfiles/.config/cmus/playlists
-	..
-0
-D/Users/yikkai95/Project/dotfiles/.config/cmus
-	lib.pl
-5
-D/Users/yikkai95/Project/dotfiles/.config
-	hledger-iadd
-6
-D/Users/yikkai95/Project/dotfiles/.config/hledger-iadd
-	config.conf
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	htop
-7
-D/Users/yikkai95/Project/dotfiles/.config/htop
-	htoprc
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	rclone
-12
-D/Users/yikkai95/Project/dotfiles/.config/rclone
-	rclone.conf
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	nvim
-10
-D/Users/yikkai95/Project/dotfiles
-	.config
-1
-D/Users/yikkai95/Project
-	dotfiles
-7
-D/Users/yikkai95
-	dotfiles
-37
-D/Users/yikkai95/dotfiles
-	.config
-1
-D/Users/yikkai95/dotfiles/.config
-	rclone
-1
-D/Users/yikkai95/dotfiles
-	.config
-1
-D/Users/yikkai95/dotfiles/.config
-	
-1
-D/Users/yikkai95/dotfiles
-	..
-0
-D/Users/yikkai95
-	.config
-4
-D/Users/yikkai95/.config
-	hledger-iadd
-2
-D/Users/yikkai95
-	Project
-37
-D/Users/yikkai95/Project
-	dotfiles
-7
-D/Users/yikkai95/Project/dotfiles
-	.git
-2
-D/Users/yikkai95/Project/dotfiles/.git
-	..
-0
-D/Users/yikkai95/Project/dotfiles
-	.config
-1
-D/Users/yikkai95/Project/dotfiles/.config
-	nvim
-10
-D/Users/yikkai95/Project/dotfiles
-	.git
-2
-D/Users/yikkai95/Project/dotfiles/.git
-	..
-0
-D/Users/yikkai95/Project/dotfiles
-	.thinkvim.d
-3
-D/Users/yikkai95/Project/dotfiles/.thinkvim.d
-	..
-0
-D/Users/yikkai95/Project/dotfiles
-	.thinkvim.d
-3
-D/Users/yikkai95/Project/dotfiles/.thinkvim.d
-	..
-0
-D/Users/yikkai95/Project/dotfiles
-	.thinkvim.d
-3
-D/Users/yikkai95/Project/dotfiles/.thinkvim.d
-	..
-0
-D/Users/yikkai95/Project/dotfiles
-	.thinkvim.d
-3
-D/Users/yikkai95/Project/dotfiles/.thinkvim.d
-	..
-0
-D/Users/yikkai95/Project/dotfiles
-	.thinkvim.d
-3
 D
 
 # Command line history (oldest to newest):
+:h
+:mkdir lottie
+:vsplit
+:mkdi
+:mkdir .config/nvim
+:mkdir nvim
+:mkdir newsboat
+:mkdir a
+:mkdir alacritty/.config
+:kkjj
+:mkdir alacritty hledger-iadd htop karabiner pet rclone vifm
+:mkdir .config
+:mkdir vim
+:mkdir fd
+:mkdir git
+:mkdir shell
+:mkdir tmux
+:mkdir sh
+:mkdir fzf
 :touch block_unknown.go
 :mkdir research
 :mkdir windows
@@ -653,6 +672,7 @@ D
 :grep mysql
 :gre coc
 :grep plan
+:mkdir
 :mkdir Assets
 :mkdir img audio vid
 :so%c
@@ -717,27 +737,13 @@ D
 :grep
 :grep air
 :grep gopls
-:vsplit
-:mkdi
-:mkdir .config/nvim
-:mkdir nvim
-:mkdir newsboat
-:mkdir a
-:mkdir alacritty/.config
-:kkjj
-:mkdir alacritty hledger-iadd htop karabiner pet rclone vifm
-:mkdir .config
-:mkdir
-:mkdir vim
-:mkdir fd
-:mkdir git
-:mkdir shell
-:mkdir tmux
-:mkdir sh
-:mkdir fzf
 
 # Search history (oldest to newest):
+/pwk
 /htop
+/projectlk
+/shell
+/fzf
 /hledger
 /inb
 /notable
@@ -755,6 +761,7 @@ D
 /docum
 /Scripts
 /docu
+/project
 /document
 /google
 /e
@@ -775,24 +782,30 @@ D
 /docker
 /store
 /yadm
+/config
 /vim
 /ui
 /airline
 /cula
 /dra
+/zsh
 /burnt
 /gols
+/git
+/gitmodules
 /dotfiles
-/config
-/projectlk
-/project
-/shell
-/fzf
-/zsh
+/vector
+/rvm
+/stow
+/gvimr
+/gvimrc
+/vimrc
 
 # Prompt history (oldest to newest):
 pnvim.new
 pnvim
+phledger
+pzsh
 pcontroller.go
 pmodel.go
 ppractice.png
@@ -840,13 +853,12 @@ presearch-json.md
 presearch-json-db.md
 presearch-json-code.md
 psite.sh
-phledger
-pzsh
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/Users/yikkai95/.local/share/vifm/Trash/001_.zshrc
+""/Users/yikkai95/Project/ledger/2019/auto.ledger
+""/Users/yikkai95/Project/ledger/2019/budget.ledger
 
 # Directory stack (oldest to newest):
 
@@ -1677,6 +1689,18 @@ t/Users/yikkai95/.local/share/vifm/Trash/000_.grip
 	/Users/yikkai95/.grip
 t/Users/yikkai95/.local/share/vifm/Trash/000_nvim
 	/Users/yikkai95/Project/dotfiles/.config/nvim
+t/Users/yikkai95/.local/share/vifm/Trash/000_AKP202
+	/Users/yikkai95/Project/arch/AKP202
+t/Users/yikkai95/.local/share/vifm/Trash/000_CAT400
+	/Users/yikkai95/Project/arch/CAT400
+t/Users/yikkai95/.local/share/vifm/Trash/000_CMT421
+	/Users/yikkai95/Project/arch/CMT421
+t/Users/yikkai95/.local/share/vifm/Trash/000_CMT422-ASSGN1
+	/Users/yikkai95/Project/arch/CMT422-ASSGN1
+t/Users/yikkai95/.local/share/vifm/Trash/000_CPT441
+	/Users/yikkai95/Project/arch/CPT441
+t/Users/yikkai95/.local/share/vifm/Trash/000_iCode
+	/Users/yikkai95/Project/ledger/2020/iCode
 
 # State:
 f

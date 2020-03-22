@@ -3,15 +3,15 @@ let maplocalleader =","
 
 call plug#begin('~/.vim/plugged')
 " Plug 'jceb/vim-orgmode'
-Plug 'dhruvasagar/vim-dotoo'
-Plug 'tpope/vim-vinegar'
+" Plug 'dhruvasagar/vim-dotoo'
+" Plug 'tpope/vim-vinegar'
 " Plug 'tpope/vim-speeddating'
 " Plug 'tomtom/ttodo_vim'
-Plug 'tomtom/tlib_vim'
+" Plug 'tomtom/tlib_vim'
 " Plug 'freitass/todo.txt-vim'
 Plug 'urbainvaes/vim-tmux-pilot'
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
+" Plug 'mattn/webapi-vim'
+" Plug 'mattn/gist-vim'
 Plug 'vimwiki/vimwiki', { 'on': 'VimwikiIndex' }
 Plug 'cormacrelf/vim-colors-github'
 Plug 'vim-airline/vim-airline'
@@ -117,6 +117,8 @@ let g:vimwiki_key_mappings =
       \ 'html' : 0,
       \ }
 nnoremap <leader>ww :VimwikiIndex<CR>
+" nnoremap gx yi`jo<c-r>=system(@")<cr><esc>ddkk
+nnoremap gx yi`jp:. !bash<cr>
 " }}}
 
 " Move lines
@@ -135,3 +137,4 @@ augroup ftype
   au BufNewFile,BufRead *todo.txt set ft=ttodo
   au BufNewFile,BufRead *js set sw=2
 augroup END
+
