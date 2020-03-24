@@ -2,16 +2,7 @@ let mapleader =" "
 let maplocalleader =","
 
 call plug#begin('~/.vim/plugged')
-" Plug 'jceb/vim-orgmode'
-" Plug 'dhruvasagar/vim-dotoo'
-" Plug 'tpope/vim-vinegar'
-" Plug 'tpope/vim-speeddating'
-" Plug 'tomtom/ttodo_vim'
-" Plug 'tomtom/tlib_vim'
-" Plug 'freitass/todo.txt-vim'
 Plug 'urbainvaes/vim-tmux-pilot'
-" Plug 'mattn/webapi-vim'
-" Plug 'mattn/gist-vim'
 Plug 'vimwiki/vimwiki', { 'on': 'VimwikiIndex' }
 Plug 'cormacrelf/vim-colors-github'
 Plug 'vim-airline/vim-airline'
@@ -117,8 +108,6 @@ let g:vimwiki_key_mappings =
       \ 'html' : 0,
       \ }
 nnoremap <leader>ww :VimwikiIndex<CR>
-" nnoremap gx yi`jo<c-r>=system(@")<cr><esc>ddkk
-nnoremap gx yi`jp:. !bash<cr>
 " }}}
 
 " Move lines
@@ -127,14 +116,37 @@ noremap  k :m-2<CR>
 vnoremap <M-k> :m-2<CR>gv=gv
 vnoremap <M-j> :m'>+<CR>gv=gv
 
-let g:tlib_extend_keyagents_InputList_s = {
-  \ 10: 'tlib#agent#Down',
-  \ 11: 'tlib#agent#Up'
-  \ }
-
 augroup ftype
   au!
-  au BufNewFile,BufRead *todo.txt set ft=ttodo
   au BufNewFile,BufRead *js set sw=2
 augroup END
 
+
+" Terminal
+  autocmd BufEnter,BufWinEnter,WinEnter term://* startinsert
+  tnoremap <C-o> <C-\><C-n>
+  tnoremap <C-h> <c-\><c-n><c-w>h
+  tnoremap <C-j> <c-\><c-n><c-w>j
+  tnoremap <C-k> <c-\><c-n><c-w>k
+  tnoremap <C-l> <c-\><c-n><c-w>l
+
+" Quick Find
+nnoremap <silent> ,G :Grep
+nnoremap ,f :find *
+nnoremap ,v :vert sfind *
+nnoremap ,F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap ,V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap ,e :e **/*<C-z><S-Tab>
+nnoremap ,b :buffer *
+
+" Command Line
+cnoremap <C-k> <Up>
+cnoremap <C-j> <Down>
+
+" File Path Shortcuts
+cnoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
+tnoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
+inoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
+cnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+tnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+inoremap <Leader>fn <C-R>=expand("%:t:r")<CR>

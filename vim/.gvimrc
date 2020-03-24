@@ -1,15 +1,6 @@
-function! DistractionFreeWriting()
-  " colorscheme typewriter
-  colorscheme github
-  highlight clear LineNr
-  highlight clear SignColumn
-  highlight EndOfBuffer ctermfg=bg ctermbg=bg guifg=bg guibg=bg
-  nmap <F12> :Goyo <bar> Limelight!!<CR>"
-  set linespace=8
-  set guifont=SF\ Mono:h12
- endfunction
+colorscheme typewriter
+set lines=999 columns=9999
+set guifont=Menlo\ Regular:h14
 
-augroup macvim
-  au!
-  au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
-augroup END
+nnoremap <Leader>xb yi`jp:. !zsh<cr>
+nnoremap <Leader>xv <:execute getline(".")<cr>

@@ -34,12 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/Users/yikkai95/go/pkg/mod/go.starlark.net@v0.0.0-20190702223751-32f345186213
-	..
-0
-d/Users/yikkai95/go/pkg/mod
-	golang.org
-5
 d/Users/yikkai95/go/pkg/mod/golang.org
 	..
 0
@@ -334,6 +328,12 @@ d/Users/yikkai95/Project/ledger
 d/Users/yikkai95/Project/ledger/2020
 	budget.ledger
 2
+d/Users/yikkai95/.config
+	mdless
+8
+d/Users/yikkai95/.config/mdless
+	..
+0
 d
 
 # Right window history (oldest to newest):
