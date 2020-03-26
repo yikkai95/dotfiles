@@ -34,24 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/Users/yikkai95/go/pkg/mod/golang.org
-	..
-0
-d/Users/yikkai95/go/pkg/mod
-	golang.org
-5
-d/Users/yikkai95/go/pkg/mod/golang.org
-	x
-1
-d/Users/yikkai95/go/pkg/mod/golang.org/x
-	arch@v0.0.0-20190927153633-4e8777c89be4
-1
-d/Users/yikkai95/go/pkg/mod/golang.org
-	x
-1
-d/Users/yikkai95/go/pkg/mod
-	golang.org
-5
 d/Users/yikkai95/Project/dotfiles/.config/nvim
 	coc-extensions
 2
@@ -334,6 +316,24 @@ d/Users/yikkai95/.config
 d/Users/yikkai95/.config/mdless
 	..
 0
+d/Applications/dmenu-mac.app/Contents/MacOS
+	dmenu-mac
+1
+d/Applications/dmenu-mac.app/Contents
+	Resources
+2
+d/Applications/dmenu-mac.app/Contents/Resources
+	Base.lproj
+1
+d/Applications/dmenu-mac.app/Contents/Resources/Base.lproj
+	Search.storyboardc
+2
+d/Applications/dmenu-mac.app/Contents/Resources
+	Assets.car
+3
+d/Applications/dmenu-mac.app/Contents
+	Resources
+2
 d
 
 # Right window history (oldest to newest):

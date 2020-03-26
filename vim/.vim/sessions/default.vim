@@ -2,15 +2,15 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/Project/pwk
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +2 Documents/Wiki/index.md
+badd +0 ~/Project/pwk/src/components/practiceTemplate.js
 argglobal
 %argdel
-edit Documents/Wiki/index.md
+edit ~/Project/pwk/src/components/practiceTemplate.js
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -18,13 +18,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-let s:l = 2 - ((1 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+1
 normal! 0
-lcd ~/Documents/Wiki
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
