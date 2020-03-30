@@ -2,6 +2,8 @@ let mapleader =" "
 let maplocalleader =","
 
 call plug#begin('~/.vim/plugged')
+
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'urbainvaes/vim-tmux-pilot'
 Plug 'vimwiki/vimwiki', { 'on': 'VimwikiIndex' }
 Plug 'cormacrelf/vim-colors-github'
@@ -150,3 +152,10 @@ inoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
 cnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
 tnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
 inoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+
+let g:ctrlp_user_command = {
+	\ 'types': {
+		\ 1: ['.rgignore', 'rg %s --files --no-heading'],
+		\ },
+	\ 'fallback': 'find %s -type f'
+	\ }

@@ -1,5 +1,6 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH="$PATH:/Users/yikkai95/Library/Python/3.7/bin"
 export PATH="$PATH:/Users/yikkai95/.local/bin/"
 export PATH="$PATH:$HOME/.rvm/bin"

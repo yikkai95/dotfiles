@@ -34,69 +34,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/Users/yikkai95/Project/dotfiles/.config/nvim
-	coc-extensions
-2
-d/Users/yikkai95/Project/dotfiles/.config
-	nvim
-11
-d/Users/yikkai95/Project/dotfiles
-	.config
-1
-d/Users/yikkai95/Project/dotfiles/.config
-	nvim
-11
-d/Users/yikkai95/Project/dotfiles/.config/nvim
-	spell
-6
-d/Users/yikkai95/dotfiles/vim/.vim/plugged
-	..
-0
-d/Users/yikkai95/dotfiles/vim/.vim
-	plugged
-2
-d/Users/yikkai95/dotfiles/vim
-	.vim
-1
-d/Users/yikkai95/dotfiles
-	.gitmodules
-19
-d/Users/yikkai95
-	dotfiles
-25
-d/Users/yikkai95/dotfiles
-	.gitmodules
-19
-d/Users/yikkai95/Project/pwk
-	node_modules
-5
-d/Users/yikkai95/Project/pwk/node_modules
-	react-native-vector-icons
-36
-d/Users/yikkai95/Project/pwk/node_modules/react-native-vector-icons
-	Fonts
-1
-d/Users/yikkai95/Project/pwk/node_modules/react-native-vector-icons/Fonts
-	Entypo.ttf
-2
-d/Users/yikkai95/Project/pwkMobile
-	assets
-4
-d/Users/yikkai95/Project/pwkMobile/assets
-	fonts
-1
-d/Users/yikkai95/Project/pwkMobile/assets/fonts
-	ComicSansMS.ttf
-1
-d/Users/yikkai95/Project/pwkMobile/assets
-	fonts
-1
-d/Users/yikkai95/Project/pwkMobile
-	src
-7
-d/Users/yikkai95/Project/pwkMobile/src
-	assets
-2
 d/Users/yikkai95/Project/pwkMobile/src/assets
 	consonant
 1
@@ -333,6 +270,69 @@ d/Applications/dmenu-mac.app/Contents/Resources
 3
 d/Applications/dmenu-mac.app/Contents
 	Resources
+2
+d/Users/yikkai95/Downloads
+	spotifyd
+13
+d/Library/LaunchDaemons
+	org.virtualbox.startup.plist
+14
+d/Users/yikkai95/.config/spotifyd
+	.spotifyd
+1
+d/Users/yikkai95/.config/spotifyd/.spotifyd
+	files
+1
+d/Users/yikkai95/.config/spotifyd/.spotifyd/files
+	46
+1
+d/Users/yikkai95/.config/spotifyd/.spotifyd/files/46
+	2bdaeb99dc5320e006d9b7a1e1010b721dbd7c
+1
+d/Users/yikkai95/.config/spotifyd/.spotifyd/files
+	46
+1
+d/Users/yikkai95/.config/spotifyd/.spotifyd/files/46
+	2bdaeb99dc5320e006d9b7a1e1010b721dbd7c
+1
+d/Users/yikkai95/.config/spotifyd/.spotifyd/files
+	46
+1
+d/Users/yikkai95/.config/spotifyd/.spotifyd
+	volume
+3
+d/Users/yikkai95/Project/myblog
+	.jekyll-cache
+1
+d/Users/yikkai95/Project
+	ledger
+4
+d/Users/yikkai95/Project/ledger
+	2019
+3
+d/Users/yikkai95/Project
+	blog
+3
+d/Users/yikkai95/Project/blog
+	assets
+5
+d/Users/yikkai95/Project
+	myblog
+5
+d/Users/yikkai95/Project/myblog
+	_config.yml
+8
+d/Users/yikkai95/.config/wtf
+	gcal
+1
+d/Users/yikkai95/.config/wtf/gcal
+	client_secret.json
+1
+d/Users/yikkai95/.config/wtf
+	gcal
+1
+d/Users/yikkai95/.config/wtf/gcal
+	credentials.json
 2
 d
 
@@ -640,7 +640,6 @@ D/Users/yikkai95/Documents/Wiki
 D
 
 # Command line history (oldest to newest):
-:h
 :mkdir lottie
 :vsplit
 :mkdi
@@ -737,6 +736,10 @@ D
 :grep
 :grep air
 :grep gopls
+:touch spotifyd.plist
+:sudo touch spotifyd.plist
+:mkdir gcal
+:touch client_secret.json
 
 # Search history (oldest to newest):
 /pwk
@@ -800,6 +803,7 @@ D
 /gvimr
 /gvimrc
 /vimrc
+/spo
 
 # Prompt history (oldest to newest):
 pnvim.new
@@ -853,12 +857,12 @@ presearch-json.md
 presearch-json-db.md
 presearch-json-code.md
 psite.sh
+pspotifyd
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/Users/yikkai95/Project/ledger/2019/auto.ledger
-""/Users/yikkai95/Project/ledger/2019/budget.ledger
+""/Users/yikkai95/.local/share/vifm/Trash/000_spotifyd
 
 # Directory stack (oldest to newest):
 
@@ -1701,6 +1705,8 @@ t/Users/yikkai95/.local/share/vifm/Trash/000_CPT441
 	/Users/yikkai95/Project/arch/CPT441
 t/Users/yikkai95/.local/share/vifm/Trash/000_iCode
 	/Users/yikkai95/Project/ledger/2020/iCode
+t/Users/yikkai95/.local/share/vifm/Trash/000_spotifyd
+	/Users/yikkai95/Downloads/spotifyd
 
 # State:
 f
