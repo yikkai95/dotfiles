@@ -17,7 +17,7 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'liuchengxu/vim-better-default'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'ferrine/md-img-paste.vim'
 Plug 'tpope/vim-markdown'
@@ -25,7 +25,6 @@ call plug#end()
 let g:vim_better_default_window_key_mapping = 0
 runtime! plugin/default.vim
 
-autocmd FileType help map <buffer><silent> q :helpclose<cr>
 
 " Ledger {{{
 au FileType ledger noremap { ?^\d<CR>
@@ -159,3 +158,32 @@ let g:ctrlp_user_command = {
 		\ },
 	\ 'fallback': 'find %s -type f'
 	\ }
+
+
+" Ultimatus Quitos
+augroup user_events
+	autocmd!
+augroup END
+autocmd user_events FileType help map <buffer><silent> q :helpclose<cr>
+
+" Self-explanatory convenience mappings
+nnoremap ' `
+vnoremap ; :
+vnoremap : ;
+nnoremap ; :
+nnoremap : ;
+
+" More manageable brace expansions
+inoremap (; (<CR>);<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>};<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>];<C-c>O
+inoremap [, [<CR>],<C-c>O
+
+" netrw
+let g:netrw_banner=0
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_browse_split=4
