@@ -1,17 +1,18 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+export GOPATH="$HOME/go"
+export GOBIN=$GOPATH/bin
+export ZDOTDIR="/Users/yikkai95/.config/zsh"
+# export PATH="/usr/local/sbin:$PATH"
+# export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH="$PATH:/Users/yikkai95/Library/Python/3.7/bin"
 export PATH="$PATH:/Users/yikkai95/.local/bin/"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/opt/yarn-1.12.3/bin"
-export PATH="$PATH:/usr/local/opt/ncurses/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:$HOME/.bash_script"
+# export PATH="$PATH:/usr/local/opt/ncurses/bin"
+# export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$GOBIN"
+# export PATH="$PATH:$HOME/.bash_script"
 
-export GOPATH="$HOME/go"
-# export LC_ALL=en_us.utf-8
 export TERM="xterm-256color"
 export MDV_THEME=880.1331
 export EDITOR="/usr/local/bin/nvim"
@@ -27,8 +28,10 @@ export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export PATH="/usr/local/sbin:$PATH"
+export NNN_PLUG="o:fzopen;"
 
 # Better view in psql
 export PAGER=less
 export LESS="-iMSx4 -RSFX -e"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

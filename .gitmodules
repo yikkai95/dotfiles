@@ -5,3 +5,27 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = git@github.com:yikkai95/nvim.git
+[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/nord-vim"]
+	path = nvim/.local/share/nvim/site/pack/minpac/opt/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim
+[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/nvim-lsp"]
+	path = nvim/.local/share/nvim/site/pack/minpac/opt/nvim-lsp
+	url = https://github.com/neovim/nvim-lsp
+[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/vim-go"]
+	path = nvim/.local/share/nvim/site/pack/minpac/opt/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/vim-ledger"]
+	path = nvim/.local/share/nvim/site/pack/minpac/opt/vim-ledger
+	url = https://github.com/ledger/vim-ledger
+[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/vimwiki"]
+	path = nvim/.local/share/nvim/site/pack/minpac/opt/vimwiki
+	url = https://github.com/vimwiki/vimwiki
+[submodule "nvim/.local/share/nvim/site/pack/minpac/start/vim-mucomplete"]
+	path = nvim/.local/share/nvim/site/pack/minpac/start/vim-mucomplete
+	url = https://github.com/lifepillar/vim-mucomplete/issues
+[submodule "nvim/.local/share/nvim/site/pack/minpac/start/vim-tmux-pilot"]
+	path = nvim/.local/share/nvim/site/pack/minpac/start/vim-tmux-pilot
+	url = https://github.com/urbainvaes/vim-tmux-pilot
+[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/minpac"]
+	path = nvim/.local/share/nvim/site/pack/minpac/opt/minpac
+	url = https://github.com/k-takata/minpac
