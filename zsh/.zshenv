@@ -1,3 +1,6 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 export GOPATH="$HOME/go"
 export GOBIN=$GOPATH/bin
@@ -33,5 +36,6 @@ export NNN_PLUG="o:fzopen;"
 # Better view in psql
 export PAGER=less
 export LESS="-iMSx4 -RSFX -e"
+export PSQL_HISTORY="$HOME/.cache/psql"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

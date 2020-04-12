@@ -29,3 +29,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/minpac/opt/minpac"]
 	path = nvim/.local/share/nvim/site/pack/minpac/opt/minpac
 	url = https://github.com/k-takata/minpac
+[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/goyo.vim"]
+	path = nvim/.local/share/nvim/site/pack/minpac/opt/goyo.vim
+	url = git@github.com:junegunn/goyo.vim.git

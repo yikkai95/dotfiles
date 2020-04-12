@@ -10,6 +10,12 @@ Pack 'neovim/nvim-lsp', { 'type': 'opt' }
 Pack 'fatih/vim-go', { 'for': 'go' }
 Pack 'neovim/nvim-lsp', { 'type': 'opt' }
 Pack 'vimwiki/vimwiki', { 'type': 'opt' }
+Pack 'logico/typewriter-vim', { 'type': 'opt' }
+Pack 'junegunn/goyo.vim', { 'type': 'opt' }
+Pack 'junegunn/limelight.vim', { 'type': 'opt' }
+"Pack 'pangloss/vim-javascript', {  'for': 'javascript' }
+Pack 'maxmellon/vim-jsx-pretty', { 'for': 'javascript' }
+Pack 'yuezk/vim-js', { 'for': 'javascript' }
 call plugpac#end()
 
 let mapleader =" "
@@ -28,11 +34,13 @@ set noswapfile                    " No swapfiles period.
 set ignorecase 			" ignore 
 set expandtab
 set cursorline
-set number                  " Line numbers on
-set relativenumber          " Relative numbers on
 set clipboard=unnamedplus,unnamed
 set bs=2
-colorscheme nord
+if !has('gui_running')
+  set number                  " Line numbers on
+  set relativenumber          " Relative numbers on
+  colorscheme nord
+endi
 let g:clipboard = {
   \   'name': 'macOS-clipboard',
   \   'copy': {
@@ -64,13 +72,23 @@ vnoremap <M-k> :m-2<CR>gv=gv
 vnoremap <M-j> :m'>+<CR>gv=gv
 
 " Quick Find
-" nnoremap ,F :Clap files<cr>
-nnoremap ,f :find <C-R>=expand("%:p:h")<cr>/*
-nnoremap ,v :vert sfind <C-R>=expand("%:p:h")<cr>/*
-nnoremap ,s :vert sfind <C-R>=expand("%:p:h")<cr>/*
-nnoremap ,b :buffer *
-nnoremap ,a :topleft vs <C-R>=expand("%:p:h")<cr><cr>
-nnoremap ,e :topleft vs .<cr>
+" Files
+nnoremap <leader>F :call FzyCommand("rg --hidden --files", ":e")<cr>
+nnoremap <leader>f :find <C-R>=expand("%:p:h")<cr>/*
+
+" Buffers
+nnoremap <leader>B :call Buffers(":e")<cr>
+nnoremap <leader>b :buffer *
+
+" Explorer
+nnoremap <leader>E :topleft vs .<cr>
+nnoremap <leader>e :topleft vs <C-R>=expand("%:p:h")<cr><cr>
+
+" sl
+nnoremap sg :vsplit<cr>
+nnoremap se :split<cr>
+
+" Greps
 nnoremap ,g :silent lgrep<Space>
 
 " Command Line
@@ -138,3 +156,26 @@ let g:loaded_gzip     = 1
 let g:loaded_zipPlugin= 1
 let g:loaded_zip      = 1
 
+nnoremap <leader>sw :packadd vimwiki<cr>
+let g:vimwiki_use_calendar = 1
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_autowriteall = 0
+let g:vimwiki_auto_chdir = 1
+let g:vimwiki_auto_header = 1
+let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_list = [
+\   { 'path': '~/Documents/Wiki/',
+\     'syntax': 'markdown',
+\     'links_space_char': '_',
+\     'ext': '.md' },
+\   { 'diary_header': 'Diary',
+\     'diary_link_fmt': '%Y-%m-%d',
+\     'auto_toc': 1,
+\     'syntax': 'markdown',
+\     'ext': '.md' },
+\ ]
+let g:vimwiki_key_mappings =
+      \ {
+      \ 'html' : 0,
+      \ }
+let g:vimwiki_folding = 'expr'

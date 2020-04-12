@@ -27,14 +27,14 @@ function! FzyCommand(choice_command, vim_command)
 endfunction
 
 
-function! Buffers()
+function! Buffers(vim_command)
     redir! > ls
     silent ls
     redir END
     let file = tempname()
     let winid = win_getid()
     let cmd = split(&shell) + split(&shellcmdflag) +  ["awk -F '\"' 'NR>1 {print $2}' ls | fzf > " . file]
-    let F = function('s:completed', [winid, file, ":e"])
+    let F = function('s:completed', [winid, file, a:vim_command])
     botright 10 new
     tnoremap <buffer> <C-j> <down>
     tnoremap <buffer> <C-k> <up>
@@ -45,8 +45,3 @@ function! Buffers()
     endif
     startinsert
 endfunction
-
-nnoremap <localleader>F :call FzyCommand("rg --hidden --files", ":e")<cr>
-nnoremap <localleader>V :call FzyCommand("rg --hidden --files", ":vs")<cr>
-nnoremap <localleader>S :call FzyCommand("rg --hidden --files", ":sp")<cr>
-nnoremap <localleader>B :call Buffers()<cr>

@@ -1,4 +1,3 @@
-packadd vimwiki
 let g:vimwiki_use_calendar = 1
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_autowriteall = 0
