@@ -15,7 +15,7 @@
 	url = https://github.com/vimwiki/vimwiki
 [submodule "vim/.config/vim/pack/minpac/start/vim-mucomplete"]
 	path = vim/.config/vim/pack/minpac/start/vim-mucomplete
-	url = https://github.com/lifepillar/vim-mucomplete/issues
+	url = https://github.com/lifepillar/vim-mucomplete
 [submodule "vim/.config/vim/pack/minpac/start/vim-tmux-pilot"]
 	path = vim/.config/vim/pack/minpac/start/vim-tmux-pilot
 	url = https://github.com/urbainvaes/vim-tmux-pilot
