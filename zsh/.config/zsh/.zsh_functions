@@ -1,0 +1,12 @@
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+function gdf() {
+  git diff --name-only | head -$1 | tail -1 | xargs -I _ sh -c 'git diff _'
+}
+
+function ga() {
+  git diff --name-only | head -$1 | tail -1 | xargs -I _ sh -c 'git add _'
+}

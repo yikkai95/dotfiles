@@ -1,0 +1,5 @@
+--exclude=node_modules
+--exclude=ios
+--exclude=android
+--exclude=assets
+--options=/Users/yikkai95/Repo/ctags-patterns-for-javascript/ctagsrc

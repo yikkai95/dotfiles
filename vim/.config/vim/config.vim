@@ -1,21 +1,30 @@
-set rtp^=/Users/yikkai95/.local/share/nvim/site/
-let &packpath="/Users/yikkai95/.local/share/nvim/site"
+set undodir=$XDG_DATA_HOME/vim/undo
+set directory=$XDG_DATA_HOME/vim/swap
+set backupdir=$XDG_DATA_HOME/vim/backup
+set viewdir=$XDG_DATA_HOME/vim/view
+set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME
+
+if !has('nvim')
+  set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
+endif
+
+let &packpath=&rtp
 call plugpac#begin()
 Pack 'k-takata/minpac', { 'type': 'opt' }
 Pack 'ledger/vim-ledger', { 'for': 'ledger' }
 Pack 'urbainvaes/vim-tmux-pilot'
-Pack 'arcticicestudio/nord-vim', { 'type': 'opt' }
 Pack  'lifepillar/vim-mucomplete'
-Pack 'neovim/nvim-lsp', { 'type': 'opt' }
 Pack 'fatih/vim-go', { 'for': 'go' }
 Pack 'neovim/nvim-lsp', { 'type': 'opt' }
 Pack 'vimwiki/vimwiki', { 'type': 'opt' }
 Pack 'logico/typewriter-vim', { 'type': 'opt' }
 Pack 'junegunn/goyo.vim', { 'type': 'opt' }
 Pack 'junegunn/limelight.vim', { 'type': 'opt' }
-"Pack 'pangloss/vim-javascript', {  'for': 'javascript' }
+Pack 'morhetz/gruvbox', { 'type': 'opt' }
 Pack 'maxmellon/vim-jsx-pretty', { 'for': 'javascript' }
 Pack 'yuezk/vim-js', { 'for': 'javascript' }
+Pack 'junegunn/fzf'
+Pack 'junegunn/fzf.vim'
 call plugpac#end()
 
 let mapleader =" "
@@ -36,10 +45,12 @@ set expandtab
 set cursorline
 set clipboard=unnamedplus,unnamed
 set bs=2
+
+let g:gruvbox_contrast_dark='soft'
 if !has('gui_running')
+  colorscheme gruvbox
   set number                  " Line numbers on
   set relativenumber          " Relative numbers on
-  colorscheme nord
 endi
 let g:clipboard = {
   \   'name': 'macOS-clipboard',
@@ -61,7 +72,7 @@ map Q <Nop>
 vnoremap L $h
 inoremap fd <esc>
 vnoremap fd <esc>
-nnoremap fd :noh<cr>
+nnoremap <silent> fd :noh<cr>
 " }}}
 
 
@@ -179,3 +190,26 @@ let g:vimwiki_key_mappings =
       \ 'html' : 0,
       \ }
 let g:vimwiki_folding = 'expr'
+
+if has("nvim")
+  packadd nvim-lsp
+endif
+
+hi vertsplit ctermfg=238 ctermbg=236
+hi LineNr ctermfg=238
+hi StatusLine ctermfg=236 ctermbg=245
+hi StatusLineNC ctermfg=239 ctermbg=237
+hi Search ctermbg=58 ctermfg=15
+hi Default ctermfg=1
+hi clear SignColumn
+hi SignColumn ctermbg=235
+hi GitGutterAdd ctermbg=235 ctermfg=245
+hi GitGutterChange ctermbg=235 ctermfg=245
+hi GitGutterDelete ctermbg=235 ctermfg=245
+hi GitGutterChangeDelete ctermbg=235 ctermfg=245
+hi EndOfBuffer ctermfg=237 ctermbg=236
+
+set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+set laststatus=2
+set noshowmode
+set statusline=%=%P\ %f\ %m
