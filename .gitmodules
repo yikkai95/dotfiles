@@ -20,7 +20,7 @@
 	path = vim/.config/vim/pack/minpac/start/vim-tmux-pilot
 	url = https://github.com/urbainvaes/vim-tmux-pilot
 [submodule "vim/.config/vim/pack/minpac/opt/minpac"]
-	path = vim/.config/vim/pack/minpac/start/minpac
+	path = vim/.config/vim/pack/minpac/opt/minpac
 	url = https://github.com/k-takata/minpac
 [submodule "vim/.config/vim/pack/minpac/opt/goyo.vim"]
 	path = vim/.config/vim/pack/minpac/opt/goyo.vim
@@ -61,6 +61,3 @@
 [submodule "zsh/.config/zsh/.oh-my-zsh"]
 	path = zsh/.config/zsh/.oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
-[submodule "vim/.config/vim/pack/minpac/start/minpac"]
-	path = vim/.config/vim/pack/minpac/start/minpac
-	url = https://github.com/k-takata/minpac
