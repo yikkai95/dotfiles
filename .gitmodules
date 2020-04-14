@@ -1,34 +1,63 @@
-[submodule "vifm/.config/vifm/colors"]
-	path = vifm/.config/vifm/colors
-	url = https://github.com/vifm/vifm-colors
-
-[submodule "nvim/.config/nvim"]
-	path = nvim/.config/nvim
-	url = git@github.com:yikkai95/nvim.git
-[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/nord-vim"]
-	path = nvim/.local/share/nvim/site/pack/minpac/opt/nord-vim
+[submodule "vim/.config/vim/pack/minpac/opt/nord-vim"]
+	path = vim/.config/vim/pack/minpac/opt/nord-vim
 	url = https://github.com/arcticicestudio/nord-vim
-[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/nvim-lsp"]
-	path = nvim/.local/share/nvim/site/pack/minpac/opt/nvim-lsp
+[submodule "vim/.config/vim/pack/minpac/opt/nvim-lsp"]
+	path = vim/.config/vim/pack/minpac/opt/nvim-lsp
 	url = https://github.com/neovim/nvim-lsp
-[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/vim-go"]
-	path = nvim/.local/share/nvim/site/pack/minpac/opt/vim-go
+[submodule "vim/.config/vim/pack/minpac/opt/vim-go"]
+	path = vim/.config/vim/pack/minpac/opt/vim-go
 	url = https://github.com/fatih/vim-go
-[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/vim-ledger"]
-	path = nvim/.local/share/nvim/site/pack/minpac/opt/vim-ledger
+[submodule "vim/.config/vim/pack/minpac/opt/vim-ledger"]
+	path = vim/.config/vim/pack/minpac/opt/vim-ledger
 	url = https://github.com/ledger/vim-ledger
-[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/vimwiki"]
-	path = nvim/.local/share/nvim/site/pack/minpac/opt/vimwiki
+[submodule "vim/.config/vim/pack/minpac/opt/vimwiki"]
+	path = vim/.config/vim/pack/minpac/opt/vimwiki
 	url = https://github.com/vimwiki/vimwiki
-[submodule "nvim/.local/share/nvim/site/pack/minpac/start/vim-mucomplete"]
-	path = nvim/.local/share/nvim/site/pack/minpac/start/vim-mucomplete
+[submodule "vim/.config/vim/pack/minpac/start/vim-mucomplete"]
+	path = vim/.config/vim/pack/minpac/start/vim-mucomplete
 	url = https://github.com/lifepillar/vim-mucomplete/issues
-[submodule "nvim/.local/share/nvim/site/pack/minpac/start/vim-tmux-pilot"]
-	path = nvim/.local/share/nvim/site/pack/minpac/start/vim-tmux-pilot
+[submodule "vim/.config/vim/pack/minpac/start/vim-tmux-pilot"]
+	path = vim/.config/vim/pack/minpac/start/vim-tmux-pilot
 	url = https://github.com/urbainvaes/vim-tmux-pilot
-[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/minpac"]
-	path = nvim/.local/share/nvim/site/pack/minpac/opt/minpac
+[submodule "vim/.config/vim/pack/minpac/opt/minpac"]
+	path = vim/.config/vim/pack/minpac/start/minpac
 	url = https://github.com/k-takata/minpac
-[submodule "nvim/.local/share/nvim/site/pack/minpac/opt/goyo.vim"]
-	path = nvim/.local/share/nvim/site/pack/minpac/opt/goyo.vim
+[submodule "vim/.config/vim/pack/minpac/opt/goyo.vim"]
+	path = vim/.config/vim/pack/minpac/opt/goyo.vim
 	url = git@github.com:junegunn/goyo.vim.git
+[submodule "tmux/.config/tmux/plugins/tmux-copycat"]
+        path = tmux/.config/tmux/plugins/tmux-copycat
+        url = git@github.com:tmux-plugins/tmux-copycat.git
+[submodule "tmux/.config/tmux/plugins/tmux-sensible"]
+        path = tmux/.config/tmux/plugins/tmux-sensible
+        url = git@github.com:tmux-plugins/tmux-sensible.git
+[submodule "tmux/.config/tmux/plugins/tmux-urlview"]
+        path = tmux/.config/tmux/plugins/tmux-urlview
+        url = git@github.com:tmux-plugins/tmux-urlview.git
+[submodule "tmux/.config/tmux/plugins/tpm"]
+        path = tmux/.config/tmux/plugins/tpm
+        url = git@github.com:tmux-plugins/tpm.git
+[submodule "vim/.config/vim/pack/minpac/opt/gruvbox"]
+        path = vim/.config/vim/pack/minpac/opt/gruvbox
+        url = git@github.com:morhetz/gruvbox.git
+[submodule "vim/.config/vim/pack/minpac/opt/limelight.vim"]
+        path = vim/.config/vim/pack/minpac/opt/limelight.vim
+        url = git@github.com:junegunn/limelight.vim.git
+[submodule "vim/.config/vim/pack/minpac/opt/typewriter-vim"]
+        path = vim/.config/vim/pack/minpac/opt/typewriter-vim
+        url = git@github.com:logico/typewriter-vim.git
+[submodule "vim/.config/vim/pack/minpac/opt/vim-js"]
+        path = vim/.config/vim/pack/minpac/opt/vim-js
+        url = git@github.com:yuezk/vim-js.git
+[submodule "vim/.config/vim/pack/minpac/opt/vim-jsx-pretty"]
+        path = vim/.config/vim/pack/minpac/opt/vim-jsx-pretty
+        url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+[submodule "vim/.config/vim/pack/minpac/start/fzf.vim"]
+        path = vim/.config/vim/pack/minpac/start/fzf.vim
+        url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/.config/vim/pack/minpac/start/fzf"]
+        path = vim/.config/vim/pack/minpac/start/fzf
+        url = git@github.com:junegunn/fzf.git
+[submodule "zsh/.config/zsh/.oh-my-zsh"]
+        path = zsh/.config/zsh/.oh-my-zsh
+        url = git@github.com:ohmyzsh/ohmyzsh.git
