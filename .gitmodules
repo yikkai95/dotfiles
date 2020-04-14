@@ -1,6 +1,3 @@
-[submodule "vim/.config/vim/pack/minpac/opt/nord-vim"]
-	path = vim/.config/vim/pack/minpac/opt/nord-vim
-	url = https://github.com/arcticicestudio/nord-vim
 [submodule "vim/.config/vim/pack/minpac/opt/nvim-lsp"]
 	path = vim/.config/vim/pack/minpac/opt/nvim-lsp
 	url = https://github.com/neovim/nvim-lsp
