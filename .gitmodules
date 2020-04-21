@@ -1,6 +1,3 @@
-[submodule "vim/.config/vim/pack/minpac/opt/nvim-lsp"]
-	path = vim/.config/vim/pack/minpac/opt/nvim-lsp
-	url = https://github.com/neovim/nvim-lsp
 [submodule "vim/.config/vim/pack/minpac/opt/vim-go"]
 	path = vim/.config/vim/pack/minpac/opt/vim-go
 	url = https://github.com/fatih/vim-go
@@ -10,9 +7,6 @@
 [submodule "vim/.config/vim/pack/minpac/opt/vimwiki"]
 	path = vim/.config/vim/pack/minpac/opt/vimwiki
 	url = https://github.com/vimwiki/vimwiki
-[submodule "vim/.config/vim/pack/minpac/start/vim-mucomplete"]
-	path = vim/.config/vim/pack/minpac/start/vim-mucomplete
-	url = https://github.com/lifepillar/vim-mucomplete
 [submodule "vim/.config/vim/pack/minpac/start/vim-tmux-pilot"]
 	path = vim/.config/vim/pack/minpac/start/vim-tmux-pilot
 	url = https://github.com/urbainvaes/vim-tmux-pilot
