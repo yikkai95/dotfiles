@@ -55,3 +55,6 @@
 [submodule "vim/.config/vim/pack/minpac/opt/coc.nvim"]
 	path = vim/.config/vim/pack/minpac/opt/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+[submodule "vim/.config/vim/pack/minpac/opt/vim-delve"]
+	path = vim/.config/vim/pack/minpac/opt/vim-delve
+	url = https://github.com/sebdah/vim-delve

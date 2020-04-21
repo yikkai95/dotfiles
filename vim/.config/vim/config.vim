@@ -13,9 +13,7 @@ call plugpac#begin()
 Pack 'k-takata/minpac', { 'type': 'opt' }
 Pack 'ledger/vim-ledger', { 'for': 'ledger' }
 Pack 'urbainvaes/vim-tmux-pilot'
-Pack  'lifepillar/vim-mucomplete'
 Pack 'fatih/vim-go', { 'for': 'go' }
-Pack 'neovim/nvim-lsp', { 'type': 'opt' }
 Pack 'vimwiki/vimwiki', { 'type': 'opt' }
 Pack 'logico/typewriter-vim', { 'type': 'opt' }
 Pack 'junegunn/goyo.vim', { 'type': 'opt' }
@@ -25,6 +23,8 @@ Pack 'maxmellon/vim-jsx-pretty', { 'for': 'javascript' }
 Pack 'yuezk/vim-js', { 'for': 'javascript' }
 Pack 'junegunn/fzf'
 Pack 'junegunn/fzf.vim'
+Pack 'neoclide/coc.nvim', {'branch': 'release', 'type': 'opt'}
+Pack 'sebdah/vim-delve', { 'for': 'go' }
 call plugpac#end()
 
 let mapleader =" "
@@ -32,7 +32,7 @@ let maplocalleader =","
 
 filetype plugin indent on 	" add filetype, plugin, and indent support
 syntax on
-set shortmess=Ic "do not show message on intro and insert completion
+set shortmess=Ica "do not show message on intro and insert completion
 set hidden  			" hide buffer instead of closing when open another file
 set splitright                  " open new split at right
 set wildmenu
@@ -47,11 +47,6 @@ set clipboard=unnamedplus,unnamed
 set bs=2
 
 let g:gruvbox_contrast_dark='soft'
-if !has('gui_running')
-  colorscheme gruvbox
-  set number                  " Line numbers on
-  set relativenumber          " Relative numbers on
-endi
 let g:clipboard = {
   \   'name': 'macOS-clipboard',
   \   'copy': {
@@ -69,7 +64,6 @@ set foldlevel=20
 
 " Maps {{{
 map Q <Nop>
-vnoremap L $h
 inoremap fd <esc>
 vnoremap fd <esc>
 nnoremap <silent> fd :noh<cr>
@@ -84,23 +78,20 @@ vnoremap <M-j> :m'>+<CR>gv=gv
 
 " Quick Find
 " Files
-nnoremap <leader>F :call FzyCommand("rg --hidden --files", ":e")<cr>
+" nnoremap <leader>F :call FzyCommand("rg --hidden --files", ":e")<cr>
+nnoremap <leader>F :Files<cr>
 nnoremap <leader>f :find <C-R>=expand("%:p:h")<cr>/*
 
 " Buffers
-nnoremap <leader>B :call Buffers(":e")<cr>
+nnoremap <leader>B :Buffers<cr>
 nnoremap <leader>b :buffer *
-
-" Explorer
-nnoremap <leader>E :topleft vs .<cr>
-nnoremap <leader>e :topleft vs <C-R>=expand("%:p:h")<cr><cr>
 
 " sl
 nnoremap sg :vsplit<cr>
 nnoremap se :split<cr>
 
 " Greps
-nnoremap ,g :silent lgrep<Space>
+nnoremap <leader>g :silent lgrep<Space>
 
 " Command Line
 cnoremap <C-h> <BS>
@@ -119,6 +110,9 @@ inoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
 cnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
 tnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
 inoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+nnoremap <leader>yp :let @"=expand("%:p")<cr>
+nnoremap <leader>yn :let @"=expand("%:t:r")<cr>
+nnoremap <leader>yd :let @"=expand("%:p:h")<cr>
 
 " Self-explanatory convenience mappings
 nnoremap ' `
@@ -127,19 +121,14 @@ vnoremap : ;
 nnoremap ; :
 nnoremap : ;
 
-" More manageable brace expansions
-inoremap (; (<CR>);<C-c>O
-inoremap (, (<CR>),<C-c>O
-inoremap {; {<CR>};<C-c>O
-inoremap {, {<CR>},<C-c>O
-inoremap [; [<CR>];<C-c>O
-inoremap [, [<CR>],<C-c>O
-
 " Linewise mapping
 nnoremap gh g^
 nnoremap gl g$
 vnoremap gh g^
 vnoremap gl g$
+
+nnoremap <leader>j 5j
+nnoremap <leader>k 5k
 
 let g:pilot_mode='wintab'
 let g:pilot_boundary='ignore'
@@ -160,56 +149,55 @@ autocmd user_events QuickFixCmdPost    l* lwindow
 vnoremap <backspace> %
 nnoremap <backspace> %
 
+" Disable vim distribution plugins
+let g:loaded_gzip = 1
+let g:loaded_tar = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_zip = 1
+let g:loaded_zipPlugin = 1
 
-let g:loaded_tarPlugin= 1
-let g:loaded_tar      = 1
-let g:loaded_gzip     = 1
-let g:loaded_zipPlugin= 1
-let g:loaded_zip      = 1
+let g:loaded_getscript = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_vimball = 1
+let g:loaded_vimballPlugin = 1
 
-nnoremap <leader>sw :packadd vimwiki<cr>
-let g:vimwiki_use_calendar = 1
-let g:vimwiki_hl_cb_checked = 1
-let g:vimwiki_autowriteall = 0
-let g:vimwiki_auto_chdir = 1
-let g:vimwiki_auto_header = 1
-let g:vimwiki_markdown_link_ext = 1
-let g:vimwiki_list = [
-\   { 'path': '~/Documents/Wiki/',
-\     'syntax': 'markdown',
-\     'links_space_char': '_',
-\     'ext': '.md' },
-\   { 'diary_header': 'Diary',
-\     'diary_link_fmt': '%Y-%m-%d',
-\     'auto_toc': 1,
-\     'syntax': 'markdown',
-\     'ext': '.md' },
-\ ]
-let g:vimwiki_key_mappings =
-      \ {
-      \ 'html' : 0,
-      \ }
-let g:vimwiki_folding = 'expr'
+let g:loaded_matchit = 1
+let g:loaded_matchparen = 1
+let g:loaded_2html_plugin = 1
+let g:loaded_logiPat = 1
+let g:loaded_rrhelper = 1
 
-if has("nvim")
-  packadd nvim-lsp
-endif
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
 
-hi vertsplit ctermfg=238 ctermbg=236
-hi LineNr ctermfg=238
-hi StatusLine ctermfg=236 ctermbg=245
-hi StatusLineNC ctermfg=239 ctermbg=237
-hi Search ctermbg=58 ctermfg=15
-hi Default ctermfg=1
-hi clear SignColumn
-hi SignColumn ctermbg=235
-hi GitGutterAdd ctermbg=235 ctermfg=245
-hi GitGutterChange ctermbg=235 ctermfg=245
-hi GitGutterDelete ctermbg=235 ctermfg=245
-hi GitGutterChangeDelete ctermbg=235 ctermfg=245
-hi EndOfBuffer ctermfg=237 ctermbg=236
+nnoremap <leader>ww :runtime plugin/vimwiki \| :packadd vimwiki \| VimwikiIndex<cr>
 
-set fillchars=vert:\ ,stl:\ ,stlnc:\ 
-set laststatus=2
-set noshowmode
-set statusline=%=%P\ %f\ %m
+if !has('gui_running')
+  colorscheme gruvbox
+  set number                  " Line numbers on
+  set relativenumber          " Relative numbers on
+  hi Normal ctermfg=223 ctermbg=236
+  hi vertsplit ctermfg=238 ctermbg=236
+  hi LineNr ctermfg=238 ctermbg=236
+  "hi CursorLine ctermfg=223 ctermbg=237
+  hi CursorLine ctermbg=237
+  hi CursorLineNr ctermfg=223 ctermbg=237
+  hi CursorLineNC ctermfg=236 ctermbg=223
+  hi StatusLine ctermfg=237 ctermbg=223
+  hi StatusLineNC ctermfg=236 ctermbg=238
+  hi Search ctermbg=58 ctermfg=15
+  "hi Default ctermfg=1
+  hi clear SignColumn
+  hi SignColumn ctermbg=235
+  hi EndOfBuffer ctermfg=237 ctermbg=236
+  set laststatus=2
+  set noshowmode
+  set statusline=%=%P\ %f\ %m
+else 
+  source $XDG_CONFIG_HOME/vim/gvim.vim
+end
+
+vnoremap p "_dP
+tnoremap <Esc> <C-\><C-n>
