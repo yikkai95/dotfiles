@@ -201,3 +201,7 @@ end
 
 vnoremap p "_dP
 tnoremap <Esc> <C-\><C-n>
+
+let g:lf_map_keys = 0
+nnoremap <leader>E :LfWorkingDirectory<CR>
+nnoremap <leader>e :Lf<CR>

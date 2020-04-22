@@ -1,7 +1,7 @@
 # Configuration
 set icons
 set hidden
-set shell sh
+set shell zsh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
@@ -22,6 +22,21 @@ cmd open ${{
     esac
 }}
 
+cmd one_column :{{
+    set nopreview
+    set ratios 1
+    map ~ two_column
+}}
+cmd two_column :{{
+    set preview
+    set ratios 1:2
+    map ~ three_column
+}}
+cmd three_column :{{
+    set preview
+    set ratios 1:2:3
+    map ~ one_column
+}}
 
 # Mapping
 map n
@@ -31,3 +46,6 @@ map nf push %touch<space>
 map ; shell
 map o &mimeopen $f
 map O $mimeopen --ask $f
+map <enter> open
+set ratios  1:2:3
+map ~ one_column
