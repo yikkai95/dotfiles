@@ -7,6 +7,25 @@ set ifs "\n"
 set scrolloff 10
 
 # Functions
+cmd bulk-rename ${{
+    old=$(mktemp)
+    new=$(mktemp)
+    [ -n $fs ] && fs=$(ls)
+    printf "$fs\n" > $old
+    printf "$fs\n" > $new
+    $EDITOR $new
+    [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
+    paste $old $new | while read names; do
+        src=$(printf $names | cut -f1)
+        dst=$(printf $names | cut -f2)
+        [ $src = $dst ] && continue
+        [ -e $dst ] && continue
+        mv $src $dst
+    done
+    rm $old $new
+    lf -remote "send $id unselect"
+}}
+
 cmd delete ${{
     set -f
     printf "$fx\n"
@@ -40,6 +59,7 @@ cmd three_column :{{
 
 # Mapping
 map n
+map R bulk-rename
 map x delete
 map nd push %mkdir<space>-p<space>
 map nf push %touch<space>
