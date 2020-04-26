@@ -205,3 +205,6 @@ tnoremap <Esc> <C-\><C-n>
 let g:lf_map_keys = 0
 nnoremap <leader>E :LfWorkingDirectory<CR>
 nnoremap <leader>e :Lf<CR>
+
+nnoremap <leader>rw :%s/\s\+$//e<cr>
+nnoremap <leader>rs :s/\<./\u&/g<cr>
