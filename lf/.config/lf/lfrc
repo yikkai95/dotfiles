@@ -2,7 +2,7 @@
 set icons
 set hidden
 set shell zsh
-set shellopts '-eu'
+set shellopts '-eu:--shwordsplit'
 set ifs "\n"
 set scrolloff 10
 
@@ -26,19 +26,21 @@ cmd bulk-rename ${{
     lf -remote "send $id unselect"
 }}
 
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        image/*) open $f;;
+        application/pdf) open $f;;
+        text/*) nvim $fx;;
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
 cmd delete ${{
     set -f
     printf "$fx\n"
     printf "delete?[y/n]"
     read ans
-    [ $ans = "y" ] && mv $fx ~/.Trash
-}}
-
-cmd open ${{
-    case $(file --mime-type $f -b) in
-        text/*) $EDITOR $fx;;
-        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
+    [ $ans = "y" ] && mv $fx ~/.Trash 
 }}
 
 cmd one_column :{{
@@ -60,12 +62,12 @@ cmd three_column :{{
 # Mapping
 map n
 map R bulk-rename
+map x
 map x delete
 map nd push %mkdir<space>-p<space>
 map nf push %touch<space>
 map ; shell
-map o &mimeopen $f
-map O $mimeopen --ask $f
+map o open
 map <enter> open
 set ratios  1:2:3
 map ~ one_column
