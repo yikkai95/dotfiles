@@ -6,6 +6,8 @@ set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME
 
 if !has('nvim')
   set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
+else
+  set inccommand=nosplit
 endif
 
 let &packpath=&rtp
@@ -129,6 +131,8 @@ vnoremap gl g$
 
 nnoremap <leader>j 5j
 nnoremap <leader>k 5k
+vnoremap <leader>j 5j
+vnoremap <leader>k 5k
 
 let g:pilot_mode='wintab'
 let g:pilot_boundary='ignore'

@@ -20,4 +20,7 @@ set sw=4 ts=4
 
 nnoremap <silent> <buffer> <leader>db :DlvToggleBreakpoint<cr>
 nnoremap <silent> <buffer> <leader>ds :DlvDebug<cr>
+nnoremap <buffer> <localLeader>ta :GoAddTags<space>
+nnoremap <buffer> <localLeader>tr :GoRemoveTags<space>
+nnoremap <buffer> <localLeader>tR :GoRemoveTags<cr>
 runtime! plugin/coc

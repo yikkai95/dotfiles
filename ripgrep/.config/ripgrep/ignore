@@ -15,8 +15,7 @@
 
 
 node_modules
-~/.git
-~/.stack
+.git
 
 .CFUserTextEncoding
 .DS_Store
@@ -28,12 +27,8 @@ node_modules
 .android
 .bundle
 .cache
-.cargo
 .cocoapods
 .cups
-.fasd
-.fasd.2nWtkD
-.fzf.zsh
 .gem
 .gnupg
 .gradle
