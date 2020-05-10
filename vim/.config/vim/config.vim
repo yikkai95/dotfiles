@@ -65,7 +65,6 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set foldlevel=20
 
 " Maps {{{
-map Q <Nop>
 inoremap fd <esc>
 vnoremap fd <esc>
 nnoremap <silent> fd :noh<cr>
@@ -137,9 +136,6 @@ vnoremap <leader>k 5k
 let g:pilot_mode='wintab'
 let g:pilot_boundary='ignore'
 autocmd VimResized * wincmd =
-
-nnoremap Q q
-nnoremap q <NOP>
 
 augroup user_events
 	autocmd!
