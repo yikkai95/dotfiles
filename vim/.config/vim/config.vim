@@ -111,9 +111,9 @@ inoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
 cnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
 tnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
 inoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
-nnoremap <leader>yp :let @"=expand("%:p")<cr>
-nnoremap <leader>yn :let @"=expand("%:t:r")<cr>
-nnoremap <leader>yd :let @"=expand("%:p:h")<cr>
+nnoremap <leader>yp :let @+=expand("%:p")<cr>
+nnoremap <leader>yn :let @+=expand("%:t:r")<cr>
+nnoremap <leader>yd :let @+=expand("%:p:h")<cr>
 
 " Self-explanatory convenience mappings
 nnoremap ' `
