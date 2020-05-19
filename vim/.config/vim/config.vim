@@ -16,7 +16,7 @@ Pack 'k-takata/minpac', { 'type': 'opt' }
 Pack 'ledger/vim-ledger', { 'for': 'ledger' }
 Pack 'urbainvaes/vim-tmux-pilot'
 Pack 'fatih/vim-go', { 'for': 'go' }
-Pack 'vimwiki/vimwiki', { 'type': 'opt' }
+Pack 'vimwiki/vimwiki', { 'type': 'opt', 'branch': 'dev' }
 Pack 'logico/typewriter-vim', { 'type': 'opt' }
 Pack 'junegunn/goyo.vim', { 'type': 'opt' }
 Pack 'junegunn/limelight.vim', { 'type': 'opt' }
@@ -27,6 +27,7 @@ Pack 'junegunn/fzf'
 Pack 'junegunn/fzf.vim'
 Pack 'neoclide/coc.nvim', {'branch': 'release', 'type': 'opt'}
 Pack 'sebdah/vim-delve', { 'for': 'go' }
+Pack 'iamcco/markdown-preview.nvim', {'do': 'call mkdp#util#install()'}
 call plugpac#end()
 
 let mapleader =" "
@@ -34,6 +35,7 @@ let maplocalleader =","
 
 filetype plugin indent on 	" add filetype, plugin, and indent support
 syntax on
+set background=dark
 set shortmess=Ica "do not show message on intro and insert completion
 set hidden  			" hide buffer instead of closing when open another file
 set splitright                  " open new split at right
@@ -48,19 +50,21 @@ set cursorline
 set clipboard=unnamedplus,unnamed
 set bs=2
 
-let g:gruvbox_contrast_dark='soft'
-let g:clipboard = {
-  \   'name': 'macOS-clipboard',
-  \   'copy': {
-  \      '+': 'pbcopy',
-  \      '*': 'pbcopy',
-  \    },
-  \   'paste': {
-  \      '+': 'pbpaste',
-  \      '*': 'pbpaste',
-  \   },
-  \   'cache_enabled': 0,
-  \ }
+if has("unix")
+  let g:clipboard = {
+    \   'name': 'macOS-clipboard',
+    \   'copy': {
+    \      '+': 'pbcopy',
+    \      '*': 'pbcopy',
+    \    },
+    \   'paste': {
+    \      '+': 'pbpaste',
+    \      '*': 'pbpaste',
+    \   },
+    \   'cache_enabled': 0,
+    \ }
+endif
+
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set foldlevel=20
 
@@ -175,23 +179,11 @@ let g:loaded_netrwFileHandlers = 1
 nnoremap <leader>ww :runtime plugin/vimwiki \| :packadd vimwiki \| VimwikiIndex<cr>
 
 if !has('gui_running')
+  let g:gruvbox_contrast_dark='medium'
   colorscheme gruvbox
+  set termguicolors           " Enable GUI colors for the terminal to get truecolor
   set number                  " Line numbers on
   set relativenumber          " Relative numbers on
-  hi Normal ctermfg=223 ctermbg=236
-  hi vertsplit ctermfg=238 ctermbg=236
-  hi LineNr ctermfg=238 ctermbg=236
-  "hi CursorLine ctermfg=223 ctermbg=237
-  hi CursorLine ctermbg=237
-  hi CursorLineNr ctermfg=223 ctermbg=237
-  hi CursorLineNC ctermfg=236 ctermbg=223
-  hi StatusLine ctermfg=237 ctermbg=223
-  hi StatusLineNC ctermfg=236 ctermbg=238
-  hi Search ctermbg=58 ctermfg=15
-  "hi Default ctermfg=1
-  hi clear SignColumn
-  hi SignColumn ctermbg=235
-  hi EndOfBuffer ctermfg=237 ctermbg=236
   set laststatus=2
   set noshowmode
   set statusline=%=%P\ %f\ %m

@@ -61,3 +61,6 @@
 [submodule "zsh/.config/zsh/plugins/fast-syntax-highlighting"]
 	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting.git
+[submodule "vim/.config/vim/pack/minpac/start/markdown-preview.nvim"]
+	path = vim/.config/vim/pack/minpac/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim.git
