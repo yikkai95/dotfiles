@@ -58,3 +58,6 @@
 [submodule "vim/.config/vim/pack/minpac/opt/vim-delve"]
 	path = vim/.config/vim/pack/minpac/opt/vim-delve
 	url = https://github.com/sebdah/vim-delve
+[submodule "zsh/.config/zsh/plugins/fast-syntax-highlighting"]
+	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting.git
