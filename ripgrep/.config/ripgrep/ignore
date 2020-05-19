@@ -6,6 +6,7 @@
 *.log
 .local/bin
 .local/share
+.mozilla
 
 ~/Project/ark/
 ~/.config/coc
