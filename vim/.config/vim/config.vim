@@ -35,6 +35,7 @@ let maplocalleader =","
 
 filetype plugin indent on 	" add filetype, plugin, and indent support
 syntax on
+set hlsearch
 set background=dark
 set shortmess=Ica "do not show message on intro and insert completion
 set hidden  			" hide buffer instead of closing when open another file
@@ -91,7 +92,7 @@ nnoremap <leader>f :find <C-R>=expand("%:p:h")<cr>/*
 nnoremap <leader>B :Buffers<cr>
 nnoremap <leader>b :buffer *
 
-" sl
+" split
 nnoremap sg :vsplit<cr>
 nnoremap se :split<cr>
 
@@ -179,9 +180,9 @@ let g:loaded_netrwFileHandlers = 1
 nnoremap <leader>ww :runtime plugin/vimwiki \| :packadd vimwiki \| VimwikiIndex<cr>
 
 if !has('gui_running')
-  let g:gruvbox_contrast_dark='medium'
+  let g:gruvbox_contrast_dark='soft'
   colorscheme gruvbox
-  set termguicolors           " Enable GUI colors for the terminal to get truecolor
+  "set termguicolors           " Enable GUI colors for the terminal to get truecolor
   set number                  " Line numbers on
   set relativenumber          " Relative numbers on
   set laststatus=2
