@@ -1,5 +1,5 @@
 skip_global_compinit=1
-export XDG_CONFIG_HOME="$HOME/.config"
+pxport XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
@@ -9,15 +9,13 @@ export PATH="$PATH:/Users/yikkai95/.local/bin/"
 export EDITOR="/usr/local/bin/nvim"
 export HLEDGER_UI_EDITOR='/usr/local/bin/vim'
 
-export SPOTIFY_CLIENT_ID=c0a57def7f774137b8803de6a7c93e33
-export SPOTIFY_SECRET=b173e1bcbc2045f7a13ab036b7dac4ab
 export LC_COLLATE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8" export NNN_PLUG="o:fzopen;"
+export LC_ALL="en_US.UTF-8"
 export CLICOLOR=1
 export PAGER=less
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
@@ -29,6 +27,7 @@ export VIMCONFIG="$XDG_CONFIG_HOME/vim"
 export VIMINIT='let $MYVIMRC="$VIMCONFIG/config.vim" | source $MYVIMRC'
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NPM_CONFIG_DEVDIR="$XDG_CACHE_HOME/node-gyp"
+export HISTFILE="$XDG_DATA_HOME"/zsh/history
 
 export GOPATH="$HOME/.local/lib/go"
 export GOBIN=$GOPATH/bin
@@ -46,7 +45,7 @@ if [[ `uname` == "Darwin" ]]; then
   export PATH="$rvm_path/bin:$PATH"
   export PATH="$GEM_HOME/bin:$PATH"
   export TERM="xterm-256color"
-  export LEDGER_FILE="/Users/yikkai95/Project/Ledger/2020/ledger-2020.ledger"
+  export LEDGER_FILE="$HOME/Project/Ledger/2020/ledger-2020.ledger"
   export LESS="-iMSx4 -RSFX -e"
   export PSQL_HISTORY="$HOME/.cache/psql/.psql_history"
   export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
@@ -57,6 +56,4 @@ if [[ `uname` == "Darwin" ]]; then
   export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
   export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
   # [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" # Load RVM into a shell session *as a function*
-else 
-  export HISTFILE="$XDG_DATA_HOME"/zsh/history
 fi
