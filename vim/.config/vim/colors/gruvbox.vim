@@ -12,8 +12,8 @@ hi StatusLine ctermfg=237 ctermbg=223
 hi StatusLineNC ctermfg=236 ctermbg=238
 hi Search ctermbg=58 ctermfg=15
 "hi Default ctermfg=1
-hi clear SignColumn
-hi SignColumn ctermbg=235
+
+hi SignColumn ctermbg=236
 hi EndOfBuffer ctermfg=237 ctermbg=236
 set laststatus=2
 set noshowmode

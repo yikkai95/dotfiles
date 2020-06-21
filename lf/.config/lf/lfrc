@@ -60,6 +60,7 @@ cmd three_column :{{
 }}
 
 # Mapping
+map t toggle
 map n
 map R bulk-rename
 map x

@@ -2272,7 +2272,15 @@
 	<key>FlashTabBarInFullscreen</key>
 	<false/>
 	<key>GlobalKeyMap</key>
-	<dict/>
+	<dict>
+		<key>0x6b-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideMenuBarInFullscreen</key>
@@ -2371,8 +2379,10 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 24 1440 853 0 0 1440 877 </string>
+	<string>0 0 1440 876 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
+	<string>0 1 1440 876 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 1 1440 876 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
@@ -3083,8 +3093,9 @@
 	<array/>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>MesloLGL Nerd Font</string>
 		<string>Monaco</string>
+		<string>Hack Nerd Font</string>
+		<string>MesloLGL Nerd Font</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -3111,7 +3122,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>A2749FDC-C2DD-4FB1-B120-B75E3B8ABCD3</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>169</integer>
+	<integer>182</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3910,7 +3921,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-22T13:54:26Z</date>
+	<date>2020-05-29T05:52:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
