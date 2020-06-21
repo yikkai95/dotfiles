@@ -178,14 +178,14 @@ let g:loaded_netrwFileHandlers = 1
 nnoremap <leader>ww :runtime plugin/vimwiki \| :packadd vimwiki \| VimwikiIndex<cr>
 
 if !has('gui_running')
-  let g:gruvbox_contrast_dark='soft'
+  let g:gruvbox_contrast_dark='medium'
   colorscheme gruvbox
   "set termguicolors           " Enable GUI colors for the terminal to get truecolor
   set number                  " Line numbers on
   set relativenumber          " Relative numbers on
   set laststatus=2
   set noshowmode
-  set signcolumn=yes
+  " set signcolumn=yes
 else 
   source $XDG_CONFIG_HOME/vim/gvim.vim
 end
