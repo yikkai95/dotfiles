@@ -49,7 +49,7 @@ set cursorline
 set clipboard=unnamedplus,unnamed
 set bs=2
 
-if has("unix")
+if has("mac")
   let g:clipboard = {
     \   'name': 'macOS-clipboard',
     \   'copy': {
@@ -143,9 +143,9 @@ autocmd VimResized * wincmd =
 augroup user_events
 	autocmd!
 augroup END
-autocmd user_events BufWinEnter * if &buftype == ''
-	\ | nnoremap <silent><buffer> q :quit<CR>
-	\ | endif
+" autocmd user_events BufWinEnter * if &buftype == ''
+" 	\ | nnoremap <silent><buffer> q :quit<CR>
+" 	\ | endif
 autocmd user_events QuickFixCmdPost [^l]* cwindow
 autocmd user_events QuickFixCmdPost    l* lwindow
 
