@@ -3,7 +3,6 @@ set directory=$XDG_DATA_HOME/vim/swap
 set backupdir=$XDG_DATA_HOME/vim/backup
 set viewdir=$XDG_DATA_HOME/vim/view
 set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME
-
 if !has('nvim')
   set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
 else
@@ -13,9 +12,9 @@ endif
 let &packpath=&rtp
 call plugpac#begin()
 Pack 'k-takata/minpac', { 'type': 'opt' }
+"Pack 'fatih/vim-go', { 'for': 'go' }
 Pack 'ledger/vim-ledger', { 'for': 'ledger' }
 Pack 'urbainvaes/vim-tmux-pilot'
-Pack 'fatih/vim-go', { 'for': 'go' }
 Pack 'vimwiki/vimwiki', { 'type': 'opt', 'branch': 'dev' }
 Pack 'logico/typewriter-vim', { 'type': 'opt' }
 Pack 'junegunn/goyo.vim', { 'type': 'opt' }
@@ -26,7 +25,6 @@ Pack 'yuezk/vim-js', { 'for': 'javascript' }
 Pack 'junegunn/fzf'
 Pack 'junegunn/fzf.vim'
 Pack 'neoclide/coc.nvim', {'branch': 'release', 'type': 'opt'}
-Pack 'sebdah/vim-delve', { 'for': 'go' }
 Pack 'iamcco/markdown-preview.nvim', {'do': 'call mkdp#util#install()'}
 call plugpac#end()
 
@@ -187,7 +185,7 @@ if !has('gui_running')
   set relativenumber          " Relative numbers on
   set laststatus=2
   set noshowmode
-  set statusline=%=%P\ %f\ %m
+  set signcolumn=yes
 else 
   source $XDG_CONFIG_HOME/vim/gvim.vim
 end
@@ -201,3 +199,4 @@ nnoremap <leader>e :Lf<CR>
 
 nnoremap <leader>rw :%s/\s\+$//e<cr>
 nnoremap <leader>rs :s/\<./\u&/g<cr>
+vnoremap [ xi[]<esc>hp

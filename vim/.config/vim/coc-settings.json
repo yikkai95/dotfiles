@@ -1,13 +1,6 @@
 {
   "diagnostic.enable": false,
   "suggest.floatEnable": false,
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "disableWorkspaceFolders": true,
-      "filetypes": ["go"]
-    }
-  }
+  "coc.preferences.formatOnSaveFiletypes": ["go"]
 }
 
