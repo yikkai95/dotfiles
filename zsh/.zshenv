@@ -4,13 +4,10 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export PATH="$PATH:/Users/yikkai95/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/statusbar"
 
-export EDITOR="/usr/local/bin/nvim"
-export HLEDGER_UI_EDITOR='/usr/local/bin/vim'
-
-export LC_COLLATE="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8" export LC_CTYPE="en_US.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
@@ -34,6 +31,8 @@ export PATH="$PATH:$GOBIN"
 
 . $XDG_CONFIG_HOME/lf/icons
 if [[ `uname` == "Darwin" ]]; then
+  export HLEDGER_UI_EDITOR='/usr/local/bin/vim'
+  export EDITOR="/usr/local/bin/nvim"
   export XDG_RUNTIME_DIR=/tmp
   export rvm_path=$XDG_DATA_HOME/rvm
   export rvm_config_path=$XDG_CONFIG_HOME/rvm/config
@@ -55,4 +54,10 @@ if [[ `uname` == "Darwin" ]]; then
   export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
   export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
   # [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" # Load RVM into a shell session *as a function*
+else 
+  export EDITOR="/usr/bin/nvim"
+  export GTK_IM_MODULE=fcitx
+  export QT_IM_MODULE=fcitx
+  export XMODIFIERS=@im=fcitx
 fi
+
