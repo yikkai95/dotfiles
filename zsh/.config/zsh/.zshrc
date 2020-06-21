@@ -18,6 +18,7 @@ bindkey -v
 bindkey -M viins 'fd' vi-cmd-mode
 bindkey -M visual 'fd' vi-cmd-mode
 bindkey -v "^?" backward-delete-char
+bindkey '^R' history-incremental-search-backward
 
 # user aliases
 alias gst="git status"
@@ -36,6 +37,7 @@ alias -g dd='$(fd -i -t d --ignore-file $XDG_CONFIG_HOME/fd/ignore | fzf)'
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt APPEND_HISTORY
+export HISTFILE="$XDG_DATA_HOME"/zsh/history
 autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt globdots
@@ -44,3 +46,5 @@ source $ZDOTDIR/.zsh_functions
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # TODO: Temporary fix for slow man completion due to fasy syntax highlight plugins
 FAST_HIGHLIGHT[chroma-man]=
+
+source $ZDOTDIR/plugins/fzf/fzf.zsh

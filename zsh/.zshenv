@@ -1,5 +1,5 @@
 skip_global_compinit=1
-pxport XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
@@ -27,8 +27,7 @@ export VIMCONFIG="$XDG_CONFIG_HOME/vim"
 export VIMINIT='let $MYVIMRC="$VIMCONFIG/config.vim" | source $MYVIMRC'
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NPM_CONFIG_DEVDIR="$XDG_CACHE_HOME/node-gyp"
-export HISTFILE="$XDG_DATA_HOME"/zsh/history
-
+export FZF_DEFAULT_COMMAND='rg --hidden --files --ignore-file $XDG_CONFIG_HOME/ripgrep/ignore'
 export GOPATH="$HOME/.local/lib/go"
 export GOBIN=$GOPATH/bin
 export PATH="$PATH:$GOBIN"
