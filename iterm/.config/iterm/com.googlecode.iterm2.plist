@@ -2267,6 +2267,8 @@
 	<string>Arrangement 1</string>
 	<key>Default Bookmark Guid</key>
 	<string>FA4BF048-DDD2-4B65-9525-5637494383A2</string>
+	<key>DisableFullscreenTransparency</key>
+	<false/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>FlashTabBarInFullscreen</key>
@@ -2284,7 +2286,7 @@
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideMenuBarInFullscreen</key>
-	<false/>
+	<true/>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTab</key>
@@ -2740,6 +2742,8 @@
 			<string>FA4BF048-DDD2-4B65-9525-5637494383A2</string>
 			<key>Has Hotkey</key>
 			<false/>
+			<key>Hide After Opening</key>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>0.80000000000000004</real>
 			<key>HotKey Activated By Modifier</key>
@@ -2769,7 +2773,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Use Transparency</key>
-			<false/>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -3054,7 +3058,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.11283907043147208</real>
 			<key>Unicode Normalization</key>
 			<integer>3</integer>
 			<key>Unicode Version</key>
@@ -3122,7 +3126,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>A2749FDC-C2DD-4FB1-B120-B75E3B8ABCD3</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>182</integer>
+	<integer>188</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3921,9 +3925,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-29T05:52:36Z</date>
+	<date>2020-06-24T08:32:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.3.11</string>
 	<key>SUUpdateGroupIdentifier</key>
 	<integer>768974920</integer>
 	<key>SUUpdateRelaunchingMarker</key>
