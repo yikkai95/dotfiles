@@ -1,6 +1,8 @@
 {
   "diagnostic.enable": false,
   "suggest.floatEnable": false,
-  "coc.preferences.formatOnSaveFiletypes": ["go"]
+  "coc.preferences.formatOnSaveFiletypes": ["go"],
+  "coc.preferences.messageLevel": "error",
+  "go.tags": {"options": ""}
 }
 

@@ -19,5 +19,18 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-nnoremap <silent> <buffer> <leader>db :DlvToggleBreakpoint<cr>
-nnoremap <silent> <buffer> <leader>ds :DlvDebug<cr>
+nnoremap <buffer> <localLeader>ta :CocCommand go.tags.add<space>
+nnoremap <buffer> <localLeader>tr :CocCommand go.tags.remove<space>
+nnoremap <buffer> <localLeader>tR :CocCommand go.tags.clear<space>
+vnoremap <buffer> <localLeader>ta :CocCommand go.tags.add.line<space>
+vnoremap <buffer> <localLeader>tr :CocCommand go.tags.remove.line<space>
+vnoremap <buffer> <localLeader>tR :GoRemoveTags<cr>
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
