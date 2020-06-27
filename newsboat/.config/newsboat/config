@@ -30,6 +30,7 @@ color listfocus_unread blue default reverse bold
 # color info red black bold
 # color article cyan default
 
+highlight feedlist ".*(0/0))" black
 highlight article "^Feed:.*" color5 color0
 highlight article "^Title:.*" color3 color0 bold
 highlight article "^Author:.*" color2 color0
