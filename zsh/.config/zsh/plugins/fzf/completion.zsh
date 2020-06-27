@@ -309,7 +309,8 @@ fzf-completion() {
     fi
   # Fall back to default completion
   elif [ ${#tokens} -gt 1 -a "$tail" = "++" ]; then
-      _fzf_dir_completion "$prefix" "$lbuf"
+    lbuf=${lbuf:0:-${#tokens[-1]}}
+    _fzf_dir_completion "$prefix" "$lbuf"
   else
     zle ${fzf_default_completion:-expand-or-complete}
   fi

@@ -30,7 +30,8 @@ alias gcalcli='gcalcli --config-folder "$XDG_CONFIG_HOME/gcalcli"'
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias ctags='ctags --options=$XDG_CONFIG_HOME/ctags/config'
 alias fd='fd --ignore-file $XDG_CONFIG_HOME/fd/ignore'
-alias -g ff='$(rg --hidden --files --ignore-file $XDG_CONFIG_HOME/ripgrep/ignore | fzf)'
+alias rg='rg --ignore-file $XDG_CONFIG_HOME/ripgrep/ignore'
+alias -g ff='$(rg --hidden --files | fzf)'
 alias -g dd='$(fd -i -t d --ignore-file $XDG_CONFIG_HOME/fd/ignore | fzf)'
 
 # user config
