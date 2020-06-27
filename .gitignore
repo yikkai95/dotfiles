@@ -1,2 +1,3 @@
 node_modules
 rclone/.config/rclone/rclone.conf
+newsboat/.config/newsboat/urls
