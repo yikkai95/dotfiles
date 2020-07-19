@@ -45,7 +45,4 @@ setopt globdots
 
 source $ZDOTDIR/.zsh_functions
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# TODO: Temporary fix for slow man completion due to fasy syntax highlight plugins
-FAST_HIGHLIGHT[chroma-man]=
-
 source $ZDOTDIR/plugins/fzf/fzf.zsh
