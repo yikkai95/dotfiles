@@ -11,6 +11,9 @@ let g:ledger_detailed_first = 1
 let g:ledger_date_format = '%Y/%m/%d'
 
 inoreabbrev ]] [Assets:Budget:]<left>
+inoreabbrev dine Expenses:Food:Dine
+inoreabbrev bank Assets:Bank:Maybank
+inoreabbrev cash Assets:Cash
 
 set sw=4
 
