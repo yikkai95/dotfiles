@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+cd '/Users/yikkai95/Documents/Wiki/log'
+for file in *.md; do
+  [[ ! -f $file ]] && continue 
+
+  otherfile="/Users/yikkai95/Documents/Wiki/diary/$file"
+  [[ ! -f $otherfile ]] && continue
+  cat "$file" "$otherfile" > "/Users/yikkai95/Documents/Wiki/merge/$file.merged"
+done

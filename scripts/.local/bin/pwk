@@ -1,0 +1,6 @@
+cd /Users/yikkai95/Project/pwk/
+tmux new-session -d -n wiki "exec nvim -c 'VimwikiIndex'"
+tmux new-window -n 'code' 'exec nvim'
+tmux new-window -n 'dev' 'exec yarn start'
+tmux split-window -h
+tmux attach

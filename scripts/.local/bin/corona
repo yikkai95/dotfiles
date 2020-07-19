@@ -1,0 +1,2 @@
+#!/usr/local/bin/zsh
+curl https://covid19tracker.xyz/malaysia | ghead -n -9

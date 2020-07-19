@@ -1,0 +1,2 @@
+#!/usr/local/bin/zsh
+sed -n '/# Weekly Outcome/,/^###/p' ~/Documents/Wiki/plan/Weekly_Outcome/$(gdate -d last-sunday +%F).md | ghead -n -2 | tail -n +3

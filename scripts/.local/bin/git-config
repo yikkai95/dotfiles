@@ -1,0 +1,5 @@
+#!/usr/local/bin/zsh
+cd /Users/yikkai95/dotfiles
+git add .
+git commit -m "$(date +%F) Regular Update"
+git push

@@ -1,0 +1,27 @@
+#!/usr/local/bin/zsh
+
+source ~/.zshenv
+source ~/.config/zsh/.zshrc
+
+file=/tmp/$(date +%F).md
+echo "# $(date +%F)" > $file
+
+echo "## Budget Report" >> $file
+echo "\n" >> $file
+echo "\`\`\`bash" >> $file
+hledger bal acct:Assets:Budget --no-total --auto --flat --drop 2  >> $file
+echo "\`\`\`" >> $file
+
+echo "## Events" >> $file
+echo "\`\`\`bash" >> $file
+gcalcli agenda --tsv $(date +%F) $(date -v+1d +%F) | awk 'BEGIN {FS="\t"}; {print $1 " " $5}' >> $file
+echo "\`\`\`" >> $file
+
+# echo "## Weekly Outcome" >> $file
+# sed -n '/### Weekly Outcome/,/^###/p' ~/Documents/Wiki/plan/Weekly_Outcome/$(gdate -d last-sunday +%F).md | tail -n +2 | ghead -n -2 >> $file
+# 
+# echo "## Weekly Task" >> $file
+# sed -n '/### Weekly Task/,/^###/p' ~/Documents/Wiki/plan/Weekly_Outcome/$(gdate -d last-sunday +%F).md | tail -n +2 >> $file
+# 
+pandoc -s -V geometry:margin=1in -o /tmp/$(date +%F).pdf $file
+open /tmp/$(date +%F).pdf

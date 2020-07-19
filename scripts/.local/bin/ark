@@ -1,0 +1,11 @@
+#!/usr/local/bin/zsh
+alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
+cd /Users/yikkai95/Project/ark
+tmux new-session -d -n wiki "exec nvim -c 'VimwikiIndex'"
+# tmux new-window -n log "exec nvim -c 'VimwikiTabMakeDiaryNote'"
+tmux new-window -n 'code' 'exec nvim'
+tmux new-window -n 'dev'
+tmux split-window -h
+tmux new-window -n 'db' 'exec psql kms_dev'
+tmux new-window -c "/Users/yikkai95/Downloads/" -n 'ssh' 'exec ssh -i new_ark_be_staging ubuntu@ark-api-staging.aciso-suite.com'
+tmux attach
