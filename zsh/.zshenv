@@ -46,7 +46,6 @@ if [[ `uname` == "Darwin" ]]; then
   export LEDGER_FILE="$HOME/Project/Ledger/2020/ledger-2020.ledger"
   export LESS="-iMSx4 -RSFX -e"
   export PSQL_HISTORY="$HOME/.cache/psql/.psql_history"
-  export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
   export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
   export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle
   export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
@@ -61,3 +60,13 @@ else
   export XMODIFIERS=@im=fcitx
 fi
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export ANDROID_HOME=/usr/local/share/android-sdk
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+export INTEL_HAXM_HOME=/usr/local/Caskroom/intel-haxm
+export PATH=$GRADLE_HOME/bin:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/build-tools/28.0.3:$PATH
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
