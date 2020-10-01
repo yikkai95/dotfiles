@@ -6,6 +6,9 @@
   "go.tags": {"options": ""},
   "go.disable": {
     "workspaceFolder": true
-  }
+  },
+  "yank.highlight.enable": false,
+  "coc.source.omni.filetypes": ["markdown"],
+  "coc.source.dictionary.filetypes": ["markdown"]
 }
 

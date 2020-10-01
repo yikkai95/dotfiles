@@ -15,7 +15,8 @@ Pack 'k-takata/minpac', { 'type': 'opt' }
 "Pack 'fatih/vim-go', { 'for': 'go' }
 Pack 'ledger/vim-ledger', { 'for': 'ledger' }
 Pack 'urbainvaes/vim-tmux-pilot'
-Pack 'vimwiki/vimwiki', { 'type': 'opt', 'branch': 'dev' }
+"Pack 'vimwiki/vimwiki', { 'type': 'opt', 'branch': 'dev' }
+Pack 'lervag/wiki.vim'
 Pack 'logico/typewriter-vim', { 'type': 'opt' }
 Pack 'junegunn/goyo.vim', { 'type': 'opt' }
 Pack 'junegunn/limelight.vim', { 'type': 'opt' }
@@ -41,6 +42,7 @@ set splitright                  " open new split at right
 set wildmenu
 set wildcharm=<tab>  		" use tab to autocomplete vim command 
 set wildmode=longest,list,full
+set laststatus=2
 set wildignore+=*/node_modules/*,*/ios/*,*/android/*
 set noswapfile                    " No swapfiles period.
 set ignorecase 			" ignore 
@@ -175,7 +177,7 @@ let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
 let g:loaded_netrwFileHandlers = 1
 
-nnoremap <leader>ww :runtime plugin/vimwiki \| :packadd vimwiki \| VimwikiIndex<cr>
+"nnoremap <leader>ww :runtime plugin/vimwiki \| :packadd vimwiki \| VimwikiIndex<cr>
 
 if !has('gui_running')
   let g:gruvbox_contrast_dark='medium'
@@ -183,7 +185,6 @@ if !has('gui_running')
   "set termguicolors           " Enable GUI colors for the terminal to get truecolor
   set number                  " Line numbers on
   set relativenumber          " Relative numbers on
-  set laststatus=2
   set noshowmode
   " set signcolumn=yes
 else 
@@ -200,3 +201,17 @@ nnoremap <leader>e :Lf<CR>
 nnoremap <leader>rw :%s/\s\+$//e<cr>
 nnoremap <leader>rs :s/\<./\u&/g<cr>
 vnoremap [ xi[]<esc>hp
+let g:wiki_root = '~/Documents/Wiki/'
+let g:wiki_filetypes = ['md']
+let g:wiki_link_extension = '.md'
+let g:wiki_link_target_type = 'md'
+let g:wiki_date_exe = 'gdate'
+let g:wiki_map_create_page = 'MyFunction'
+let g:wiki_map_link_create = 'MyFunction'
+function MyFunction(name) abort
+  let l:name = wiki#get_root() . '/' . a:name
+  " If the file is new, then append the current date
+  return filereadable(l:name)
+        \ ? a:name
+        \ : strftime('%Y%m%d') . '_' . a:name 
+endfunction
