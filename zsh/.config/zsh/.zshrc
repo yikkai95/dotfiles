@@ -46,3 +46,8 @@ setopt globdots
 source $ZDOTDIR/.zsh_functions
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/plugins/fzf/fzf.zsh
+
+ n() { $EDITOR $HOME/Documents/Wiki/index.md } 
+ nls() { ls -c $HOME/Documents/Wiki | grep "$*" } 
+ t() { rg -N "$*" "$HOME/Documents/Wiki/todo/index.md" }
+ te() { $EDITOR "$HOME/Documents/Wiki/todo/index.md" }
