@@ -6,13 +6,7 @@ autoload -U colors && colors	# Load colors
 ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
 zle_highlight+=(paste:none) #remove hightlights when pasting
 #DISABLE_AUTO_TITLE="true"
-
-autoload -Uz add-zsh-hook
-prompt_mimir_cmd() { $GOBIN/mimir }
-add-zsh-hook precmd prompt_mimir_cmd
-prompt_symbol='❯'
-PROMPT="%(?.%F{magenta}.%F{red})${prompt_symbol}%f "
-
+#
 # mapping
 bindkey -v
 bindkey -M viins 'fd' vi-cmd-mode
@@ -47,7 +41,12 @@ source $ZDOTDIR/.zsh_functions
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/plugins/fzf/fzf.zsh
 
- n() { $EDITOR $HOME/Documents/Wiki/index.md } 
- nls() { ls -c $HOME/Documents/Wiki | grep "$*" } 
- t() { rg -N "$*" "$HOME/Documents/Wiki/todo/index.md" }
- te() { $EDITOR "$HOME/Documents/Wiki/todo/index.md" }
+n() { $EDITOR $HOME/Documents/Wiki/index.md } 
+nls() { ls -c $HOME/Documents/Wiki | grep "$*" } 
+t() { rg -N "$*" "$HOME/Documents/Wiki/todo/index.md" }
+te() { $EDITOR "$HOME/Documents/Wiki/todo/index.md" }
+
+# autoload -U promptinit; promptinit
+# prompt spaceship
+
+eval "$(starship init zsh)"

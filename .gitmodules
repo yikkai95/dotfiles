@@ -58,3 +58,6 @@
 [submodule "vim/.config/vim/pack/minpac/start/markdown-preview.nvim"]
 	path = vim/.config/vim/pack/minpac/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim.git
+[submodule "zsh/.config/zsh/plugins/spaceship-prompt"]
+	path = zsh/.config/zsh/plugins/spaceship-prompt
+	url = https://github.com/denysdovhan/spaceship-prompt
