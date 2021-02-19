@@ -1,0 +1,8 @@
+#!/bin/sh
+AWS_ACCESS_KEY_ID="AKIAVFUCWL6N7TA65PFG" \
+AWS_SECRET_ACCESS_KEY="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" \
+certbot --agree-tos -a certbot-s3front:auth \
+--certbot-s3front:auth-s3-bucket wine.yykk.xyz \
+-i certbot-s3front:installer \
+--certbot-s3front:installer-cf-distribution-id E387JSNS71TN6 \
+-d wine.yykk.xyz

@@ -1,0 +1,7 @@
+#!/usr/bin/osascript -l JavaScript
+var safari = Application('Safari')
+safari.doJavaScript(`
+document.URL + "\\n" +
+document.title + "\\n" +
+window.getSelection().toString()
+`, { in: safari.windows[0].currentTab })

@@ -1,0 +1,5 @@
+#!/usr/local/bin/zsh
+cd /Users/yikkai95/Project/personal/wiki
+git add .
+git commit -m "$(date +%F) tw update"
+git push

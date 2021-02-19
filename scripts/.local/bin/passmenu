@@ -1,0 +1,9 @@
+#!/bin/sh
+
+store=~/.password-store
+cd $store
+password=$(fd . -tf | choose)
+
+echo  "$password" 
+[[ -n $password ]] || exit
+pass show -c "${password%.gpg}" 2>/dev/null

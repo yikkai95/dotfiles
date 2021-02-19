@@ -1,0 +1,2 @@
+#!/bin/sh
+aws s3 cp /Users/yikkai95/twtxt.txt s3://nnnyykk.com/twtxt.txt
