@@ -1,0 +1,17 @@
+#!/bin/sh
+
+COMMAND="$1"
+cd $HOME/Project/dotfiles
+cmd_git() {
+        git "$@" 
+}
+
+cmd_fzf() {
+        fzf | xargs nvim -
+}
+
+case "$1" in
+        git) shift;			cmd_git "$@" ;;
+        *) shift;                       cmd_fzf ;;
+esac
+
