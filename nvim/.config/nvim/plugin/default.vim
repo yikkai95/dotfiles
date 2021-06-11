@@ -24,14 +24,8 @@ set wildmenu
 syntax off
 " set termguicolors           " Enable GUI colors for the terminal to get truecolor
 
-" colorscheme
-" colorscheme base16-default-dark
 set background=light
 colorscheme PaperColor
-" let base16colorspace=256
-" colorscheme gruvbox
-" let g:gruvbox_contrast_dark='medium'
-" let g:gruvbox_invert_selection='0'
 
 
 vnoremap p "_dP
