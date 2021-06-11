@@ -1,0 +1,9 @@
+alt - e : cat ~/emoji | choose | cut -d':' -f2 | tr -d $'\n' | pbcopy
+alt - n : mvim
+alt - p : $HOME/.local/bin/passmenu
+alt - d : bravebookmark >> $XDG_DATA_HOME/bookmark && alacritty -e nvim $XDG_DATA_HOME/bookmark 
+alt - t : alacritty
+alt - y : alacritty -e ytfzf &
+alt - f : alacritty --working-directory "/Users/yikkai95/Documents/Wiki" -e ./search
+alt - b : alacritty -e bookmark
+alt - a : address

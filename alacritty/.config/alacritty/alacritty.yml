@@ -1,0 +1,207 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# refer to https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
+env:
+  TERM: xterm-256color
+  LC_ALL: "sv_SE.UTF-8"
+
+window:
+  dimensions:
+    columns: 160
+    lines: 35
+  padding:
+    x: 30
+    y: 30
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+  decorations: buttonless
+  startup_mode: Windowed
+
+scrolling:
+  history: 0
+
+# Font configuration (changes require restart)
+font:
+  normal:
+    family: Monaco
+    family: MesloLgL Nerd Font
+  bold:
+    family: Monaco
+    family: MesloLgL Nerd Font
+    style: Bold
+  italic:
+    family: Monaco
+    family: MesloLgL Nerd Font
+    style: Bold
+  size: 14.0
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: false
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+# Base16 PaperColor Light 256 - alacritty color config
+# Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
+colors:
+  # Default colors
+  primary:
+    background: '0xeeeeee'
+    foreground: '0x444444'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xeeeeee'
+    cursor: '0x444444'
+
+  # Normal colors
+  normal:
+    black:   '0xeeeeee'
+    red:     '0xbcbcbc'
+    green:   '0x8700af'
+    yellow:  '0xd70087'
+    blue:    '0xd75f00'
+    magenta: '0x005faf'
+    cyan:    '0xd75f00'
+    white:   '0x444444'
+
+  # Bright colors
+  bright:
+    black:   '0x5f8700'
+    red:     '0xbcbcbc'
+    green:   '0x8700af'
+    yellow:  '0xd70087'
+    blue:    '0xd75f00'
+    magenta: '0x005faf'
+    cyan:    '0xd75f00'
+    white:   '0x878787'
+
+  indexed_colors:
+    - { index: 16, color: '0xd70000' }
+    - { index: 17, color: '0x005f87' }
+    - { index: 18, color: '0xaf0000' }
+    - { index: 19, color: '0x008700' }
+    - { index: 20, color: '0x0087af' }
+    - { index: 21, color: '0x005f87' }
+
+visual_bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '0xffffff'
+
+mouse:
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: false
+
+  url:
+    launcher:
+     program: open
+    modifiers: None
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# Shell
+shell:
+ program: /usr/local/bin/zsh
+ args:
+   - --login
+
+# Send ESC (\x1b) before characters when alt is pressed.
+alt_send_esc: false
+
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: Warn
+  print_events: false
+  ref_test: false
+
+# Key bindings
+key_bindings:
+  - { key: Equals,   mods: Command,         action: IncreaseFontSize }
+  - { key: Minus,    mods: Command,         action: DecreaseFontSize }
+  - { key: V,        mods: Command,         action: Paste            }
+  - { key: C,        mods: Command,         action: Copy             }
+  - { key: Q,        mods: Command,         action: Quit             }
+  - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                          }
+  - { key: Delete,                  chars: "\x1b[3~"                         }
+  - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                       }
+  - { key: Left,     mods: Control, chars: "\x1b[1;5D"                       }
+  - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                       }
+  - { key: Left,                    chars: "\x1b[D",        mode: ~AppCursor }
+  - { key: Left,                    chars: "\x1bOD",        mode: AppCursor  }
+  - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                       }
+  - { key: Right,    mods: Control, chars: "\x1b[1;5C"                       }
+  - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                       }
+  - { key: Right,                   chars: "\x1b[C",        mode: ~AppCursor }
+  - { key: Right,                   chars: "\x1bOC",        mode: AppCursor  }
+  - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                       }
+  - { key: Up,       mods: Control, chars: "\x1b[1;5A"                       }
+  - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                       }
+  - { key: Up,                      chars: "\x1b[A",        mode: ~AppCursor }
+  - { key: Up,                      chars: "\x1bOA",        mode: AppCursor  }
+  - { key: Down,     mods: Shift,   chars: "\x1b[1;2B"                       }
+  - { key: Down,     mods: Control, chars: "\x1b[1;5B"                       }
+  - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                       }
+  - { key: Down,                    chars: "\x1b[B",        mode: ~AppCursor }
+  - { key: Down,                    chars: "\x1bOB",        mode: AppCursor  }
+  - { key: F1,                      chars: "\x1bOP"                          }
+  - { key: F2,                      chars: "\x1bOQ"                          }
+  - { key: F3,                      chars: "\x1bOR"                          }
+  - { key: F4,                      chars: "\x1bOS"                          }
+  - { key: F5,                      chars: "\x1b[15~"                        }
+  - { key: F6,                      chars: "\x1b[17~"                        }
+  - { key: F7,                      chars: "\x1b[18~"                        }
+  - { key: F8,                      chars: "\x1b[19~"                        }
+  - { key: F9,                      chars: "\x1b[20~"                        }
+  - { key: F10,                     chars: "\x1b[21~"                        }
+  - { key: F11,                     chars: "\x1b[23~"                        }
+  - { key: F12,                     chars: "\x1b[24~"                        }
+  - { key: NumpadEnter,             chars: "\n"                              }
+  - { key: Key1,     mods: Command,       chars: "\x1b[27;5;49~" }
+  - { key: Key2,     mods: Command,       chars: "\x1b[27;5;50~" }
+  - { key: Key3,     mods: Command,       chars: "\x1b[27;5;51~" }
+  - { key: Key4,     mods: Command,       chars: "\x1b[27;5;52~" }
+  - { key: Key5,     mods: Command,       chars: "\x1b[27;5;53~" }
+  - { key: Key6,     mods: Command,       chars: "\x1b[27;5;54~" }
+  - { key: Key7,     mods: Command,       chars: "\x1b[27;5;55~" }
+  - { key: Key8,     mods: Command,       chars: "\x1b[27;5;56~" }
+  - { key: Key9,     mods: Command,       chars: "\x1b[27;5;57~" }
+
+  - { key: K,     mods: Alt,    chars: "\x1bk" }
+  - { key: J,     mods: Alt,    chars: "\x1bj" }
+  - { key: H,     mods: Alt,    chars: "\x1bh" }
+  - { key: L,     mods: Alt,    chars: "\x1bl" }
+  - { key: C,     mods: Alt,    chars: "\x1bc" }
+
+  - { key: Space,    mods: Control,       chars: "\x00" }
+  - { key: Key1,     mods: Control,       chars: "\x1b[27;5;49~" }
+  - { key: Key2,     mods: Control,       chars: "\x1b[27;5;50~" }
+  - { key: Key3,     mods: Control,       chars: "\x1b[27;5;51~" }
+  - { key: Key4,     mods: Control,       chars: "\x1b[27;5;52~" }
+  - { key: Key5,     mods: Control,       chars: "\x1b[27;5;53~" }
+  - { key: Key6,     mods: Control,       chars: "\x1b[27;5;54~" }
+  - { key: Key7,     mods: Control,       chars: "\x1b[27;5;55~" }
+  - { key: Key8,     mods: Control,       chars: "\x1b[27;5;56~" }
+  - { key: Key9,     mods: Control,       chars: "\x1b[27;5;57~" }
+
+
+  - { key: Return,   mods: Control,         chars: "\x1b[13;5u" }
+  - { key: Return,   mods: Shift,           chars: "\x1b[13;2u" }

@@ -1,0 +1,7 @@
+#!/usr/bin/osascript -l JavaScript
+var brave = Application('Brave Browser')
+var tab = brave.windows[0].activeTab
+var title = tab.execute({
+  javascript: "window.prompt('Title', document.title)"
+})
+title + " "  + tab.url()

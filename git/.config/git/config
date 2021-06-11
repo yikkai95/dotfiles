@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Ng Yik Kai
+	email = yikkai95@gmail.com
+[pull]
+	ff = only

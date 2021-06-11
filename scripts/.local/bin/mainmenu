@@ -1,0 +1,7 @@
+#!/bin/sh
+option=$(cat $XDG_DATA_HOME/mainmenu | choose)
+case $option in
+  "option 1")
+    address
+esac
+#osascript -e "display notification \"$option\" with title \"Notification\""

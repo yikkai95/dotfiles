@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat $XDG_DATA_HOME/address | choose | cut -d, -f2 | xargs -I_ open https://bscscan.com/address/_

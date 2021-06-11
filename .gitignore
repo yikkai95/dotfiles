@@ -1,0 +1,13 @@
+node_modules
+rclone/.config/rclone/rclone.conf
+newsboat/.config/newsboat/urls
+gcalcli/.config/gcalcli/oauth
+zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/.zsh_sessions/
+vim/.config/vim/pack
+bat/.config/bat/themes/
+nvim/.config/nvim/pack/
+tmux/.config/tmux/plugins/
+zsh/.config/zsh/.zcompcache/
+zsh/.config/zsh/.zsh_history
+zsh/.config/zsh/plugins/

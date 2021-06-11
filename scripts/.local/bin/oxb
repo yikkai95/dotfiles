@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /Users/yikkai95/Project/sss/scripts/
+node oxb.js | jq '.[] | .name + "," + .address + "," + .balance' | pbcopy

@@ -1,0 +1,74 @@
+# Configuration
+set icons
+set hidden
+set shell zsh
+set shellopts '-eu:--shwordsplit'
+set ifs "\n"
+set scrolloff 10
+
+# Functions
+cmd bulk-rename ${{
+    old=$(mktemp)
+    new=$(mktemp)
+    [ -n $fs ] && fs=$(ls)
+    printf "$fs\n" > $old
+    printf "$fs\n" > $new
+    $EDITOR $new
+    [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
+    paste $old $new | while read names; do
+        src=$(printf $names | cut -f1)
+        dst=$(printf $names | cut -f2)
+        [ $src = $dst ] && continue
+        [ -e $dst ] && continue
+        mv $src $dst
+    done
+    rm $old $new
+    lf -remote "send $id unselect"
+}}
+
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        image/*) open $f;;
+        application/pdf) open $f;;
+        text/*) nvim $fx;;
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+cmd delete %{{
+    #printf "$fx\n"
+    echo "delete?[y/n]"
+    read ans
+    [ $ans = 'y' ] && mv -f $fx ~/.Trash || echo 'cancelled.'
+}}
+
+cmd one_column :{{
+    set nopreview
+    set ratios 1
+    map ~ two_column
+}}
+cmd two_column :{{
+    set preview
+    set ratios 1:2
+    map ~ three_column
+}}
+cmd three_column :{{
+    set preview
+    set ratios 1:2:3
+    map ~ one_column
+}}
+
+# Mapping
+map i %~/.local/bin/preview.sh $f
+map t toggle
+# map n
+map R bulk-rename
+map x
+map x delete
+map D push %mkdir<space>-p<space>
+map F push %touch<space>
+map ; shell
+map o open
+map <enter> open
+set ratios  1:2:3
+map ~ one_column

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+target=$(echo $1 | tr a-z A-Z)
+curl -s -X GET "https://api.coingecko.com/api/v3/coins/binancecoin/tickers?exchange_ids=binance" -H "accept: application/json" | jq ".tickers | .[] | select(.target==\"$target\") | .converted_last.usd"

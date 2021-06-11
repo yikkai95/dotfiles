@@ -1,0 +1,4 @@
+cache=/Users/yikkai95/.cache/npm
+tmp=/tmp/npm
+init-module=/Users/yikkai95/.config/npm/config/npm-init.js
+scripts-prepend-node-path=auto

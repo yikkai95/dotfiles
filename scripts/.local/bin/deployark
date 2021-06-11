@@ -1,0 +1,4 @@
+#!/bin/sh
+ssh -i ~/.ssh/ark-be-staging.pem ubuntu@ark-api-staging.aciso-suite.com 'bash -c "source .profile && ./scripts/deploy_staging_server.sh"' &> /dev/null &
+ssh -i ~/.ssh/ark-be-production.pem ubuntu@ark-api.aciso-suite.com 'bash -c "source .profile && ./Scripts/deploy_production_servers"'  &> /dev/null &
+ssh -i ~/.ssh/tennis-be-production.pem ubuntu@ark-api.tennis-suite.com 'bash -c "export PATH=$PATH:/usr/local/go/bin && ./Scripts/deploy_production_server"'

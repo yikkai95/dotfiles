@@ -1,0 +1,57 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# refer to https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
+env:
+  TERM: xterm-256color
+  LC_ALL: "sv_SE.UTF-8"
+
+window:
+  padding:
+    x: 30
+    y: 30
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+  # decorations: buttonless 
+  decorations: transparent 
+  startup_mode: Windowed 
+
+scrolling:
+  history: 0
+
+# Font configuration (changes require restart)
+font:
+  normal:
+    family: Monaco
+    family: MesloLgL Nerd Font
+  size: 14.0
+  offset:
+    x: 0
+    y: 0
+ 
+colors:
+  primary:
+    background: '0xeeeeee'
+    foreground: '0x444444'
+  cursor:
+    text: '0xeeeeee'
+    cursor: '0x444444'
+  normal:
+    black:   '0xeeeeee'
+    red:     '0xbcbcbc'
+    green:   '0x8700af'
+    yellow:  '0xd70087'
+    blue:    '0xd75f00'
+    magenta: '0x005faf'
+    cyan:    '0xd75f00'
+    white:   '0x444444'
+  bright:
+    black:   '0x5f8700'
+    red:     '0xd70000'
+    green:   '0xaf0000'
+    yellow:  '0x008700'
+    blue:    '0x0087af'
+    magenta: '0x005f87'
+    cyan:    '0x005f87'
+    white:   '0x878787'
