@@ -25,7 +25,7 @@ nnoremap <localleader>ta :GoAddTags
 vnoremap <localleader>tr :GoRemoveTags 
 vnoremap <localleader>ta :GoAddTags 
 nnoremap <localleader>tr :GoRemoveTags 
-nnoremap <localleader>f :!gofmt -w %
+"nnoremap <localleader>f :!gofmt -w %
 nnoremap <localleader>i :!goimports -w %
 "nnoremap <localleader>w :w<cr>:!gofmt -w % && goimports -w %<cr>:e<cr>
 nnoremap <localleader>w :lua goimports(1000)<cr>
@@ -54,6 +54,7 @@ lua <<EOF
   end
 EOF
 
+set fdm=indent
 
-set fdm=expr
-set foldexpr=nvim_treesitter#foldexpr()
+"set fdm=expr
+"set foldexpr=nvim_treesitter#foldexpr()

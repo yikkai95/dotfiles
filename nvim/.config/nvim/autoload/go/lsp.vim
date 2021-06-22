@@ -7,4 +7,5 @@ function! go#lsp#Setup()
   nnoremap <silent> <buffer> <leader>rn    <cmd>lua vim.lsp.buf.rename()<CR>
   inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  "nnoremap <silent> <buffer> <localleader>w <cmd>lua vim.lsp.buf.formatting()<CR>
 endfunction

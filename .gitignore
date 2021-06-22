@@ -11,3 +11,4 @@ tmux/.config/tmux/plugins/
 zsh/.config/zsh/.zcompcache/
 zsh/.config/zsh/.zsh_history
 zsh/.config/zsh/plugins/
+**/.DS_Store

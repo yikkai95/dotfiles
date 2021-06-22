@@ -2,7 +2,9 @@
 
 COMMAND="$1"
 cd $HOME/Project/dotfiles
+
 cmd_git() {
+        echo "$@"
         git "$@" 
 }
 
