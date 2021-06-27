@@ -1,0 +1,38 @@
+$include /etc/inputrc
+set show-all-if-ambiguous on
+set editing-mode vi
+$if mode=vi
+Control-k: menu-complete
+Control-j: menu-complete-backward
+set keymap vi-command
+	Control-l: clear-screen
+	Control-a: beginning-of-line
+	"D":kill-line
+	"dw": kill-word
+	"dd": kill-whole-line
+	"db": backward-kill-word
+	"cc": "ddi"
+	"cw": "dwi"
+	"cb": "dbi"
+	"diw": "lbdw"
+	"yiw": "lbyw"
+	"ciw": "lbcw"
+	"diW": "lBdW"
+	"yiW": "lByW"
+	"ciW": "lBcW"
+	"gg": beginning-of-history
+	"G": end-of-history
+
+set keymap vi-insert
+	Control-l: clear-screen
+	Control-a: beginning-of-line
+	"fd": vi-movement-mode # remap escape
+	"\e?": backward-kill-word
+
+$endif
+set completion-ignore-case On
+
+# Cursor
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
