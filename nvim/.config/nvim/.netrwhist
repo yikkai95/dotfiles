@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/yikkai95/Downloads'
+let g:netrw_dirhist_9='/Users/yikkai95/Project/ark/routers/api/v1/centers'
+let g:netrw_dirhist_8='/Users/yikkai95/.config/nvim'
+let g:netrw_dirhist_7='/Users/yikkai95/Project/ark/routers/api/v1/centers'
+let g:netrw_dirhist_6='/Users/yikkai95/Project/pwk/ios/Pods'
+let g:netrw_dirhist_5='/Users/yikkai95/Project'
+let g:netrw_dirhist_4='/Users/yikkai95/Project/ark'
+let g:netrw_dirhist_3='/Users/yikkai95/Project/ark/translateengine'
+let g:netrw_dirhist_2='/Users/yikkai95/Project/ark/routers/api/v1/centers'
+let g:netrw_dirhist_1='/Users/yikkai95/.xinitrc.d'
