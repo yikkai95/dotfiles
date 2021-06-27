@@ -32,6 +32,7 @@ export HISTFILE="$XDG_DATA_HOME"/zsh/history
 autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt globdots
+bindkey -rpM viins '^['
 
 source $ZDOTDIR/.zsh_functions
 source $HOME/repo/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
