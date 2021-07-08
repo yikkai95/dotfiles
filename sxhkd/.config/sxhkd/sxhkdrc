@@ -1,0 +1,11 @@
+alt + p
+        passmenu
+
+alt + r
+	pkill -USR1 -x sxhkd
+
+alt + n
+        findnotes
+
+alt + b
+        findbookmark
