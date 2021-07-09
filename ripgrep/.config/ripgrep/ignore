@@ -1,0 +1,7 @@
+.steam
+.local/share/
+.Trash
+.local/lib
+.pki
+.cache
+Postman

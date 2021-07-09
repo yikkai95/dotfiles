@@ -5,6 +5,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/share/applications"
 export PATH="$PATH:$HOME/.local/bin/statusbar"
 export PATH="$PATH:/usr/local/sbin"
 
@@ -33,3 +34,23 @@ export XMODIFIERS=@im=fcitx
 export STARSHIP_CONFIG=$HOME/.config/starship.toml
 export TERMINAL=/usr/local/bin/st
 export EDITOR=/usr/bin/nvim
+export BROWSER=/usr/bin/brave
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+export TASKRC=$XDG_CONFIG_HOME/taskwarrior/config
+export TASKDATA=$XDG_DATA_HOME/taskwarrior
+export PLAN9=/home/yikkai/repo/plan9 
+export PATH=$PATH:$PLAN9/bin
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+#export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+export LESSHISTFILE=-
+export SSB_HOME="$XDG_DATA_HOME"/zoom
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+source $XDG_DATA_HOME/cargo/env
+export PATH=$PATH:$XDG_DATA_HOME/solana/install/active_release/bin
+export CALCHISTFILE=-
+# npm installation to local, bypas sudo
+PATH="$HOME/.local/bin:$PATH"
+export npm_config_prefix="$HOME/.local"

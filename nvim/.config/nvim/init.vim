@@ -26,6 +26,8 @@ Plug 'tpope/vim-surround'
 Plug 'tomlion/vim-solidity'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'voldikss/vim-floaterm'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'sharat87/roast.vim'
 call plug#end()
 
 let mapleader =" " 
@@ -34,6 +36,11 @@ let maplocalleader =","
 " urbainvaes/vim-tmux-pilot
 let g:pilot_mode='wintab'
 let g:pilot_boundary='ignore'
+let g:pilot_key_h='<C-h>'
+let g:pilot_key_j='<C-j>'
+let g:pilot_key_k='<C-k>'
+let g:pilot_key_l='<C-l>'
+let g:pilot_key_p='<C-\>'
 
 " plugin/lf.vim
 let g:floaterm_opener = 'edit'
@@ -64,6 +71,7 @@ let g:compe.source.buffer = v:true
 let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
+let g:compe.source.ignored_filetypes = ["sql"]
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
@@ -80,10 +88,12 @@ for _, server in pairs(servers) do
 end
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "go", "javascript", "html", "rust", "json", "html" },
+  ensure_installed = { "go", "typescript", "javascript", "html", "rust", "json", "html" },
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = { "c" },  -- list of language that will be disabled
   },
 }
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.typescript.used_by = "typescriptreact"
 EOF

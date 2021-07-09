@@ -28,17 +28,25 @@ alias -g dd='$(fd -i -t d --ignore-file $XDG_CONFIG_HOME/fd/ignore | fzf)'
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt APPEND_HISTORY
+HISTSIZE=10000
+SAVEHIST=10000
 export HISTFILE="$XDG_DATA_HOME"/zsh/history
-autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
+#autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
+autoload -Uz compinit 
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt globdots
-bindkey -rpM viins '^['
+# bindkey -rpM viins '^['
 
 source $ZDOTDIR/.zsh_functions
 source $HOME/repo/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-#source $ZDOTDIR/plugins/fzf/fzf.zsh
+source $ZDOTDIR/plugins/fzf/fzf.zsh
 
 eval "$(starship init zsh)"
 fpath=(/Users/yikkai95/.config/zsh/completions $fpath)

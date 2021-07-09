@@ -22,10 +22,12 @@ set laststatus=2
 set wildignore+=*/node_modules/*,*/ios/*,*/android/*
 set wildmenu
 syntax off
-" set termguicolors           " Enable GUI colors for the terminal to get truecolor
+"set termguicolors           " Enable GUI colors for the terminal to get truecolor
 
-"set background=light
-"colorscheme PaperColor
+
+"set t_Co=256   " This is may or may not needed.
+set background=light
+colorscheme PaperColor
 
 
 vnoremap p "_dP
@@ -125,24 +127,25 @@ nnoremap <silent> <leader>ma :!grep -Fxq %:p $XDG_CACHE_HOME/bf \|\| echo %:p >>
 nnoremap <leader>ml :call fzf#run({'source': 'cat $XDG_CACHE_HOME/bf', 'sink': 'e'})<cr>
 
 " Clipboard
-let g:clipboard = {
-      \   'name': 'macOS-clipboard',
-      \   'copy': {
-      \      '+': 'pbcopy',
-      \      '*': 'pbcopy',
-      \    },
-      \   'paste': {
-      \      '+': 'pbpaste',
-      \      '*': 'pbpaste',
-      \   },
-      \   'cache_enabled': 0,
-      \ }
+"let g:clipboard = {
+"      \   'name': 'macOS-clipboard',
+"      \   'copy': {
+"      \      '+': 'pbcopy',
+"      \      '*': 'pbcopy',
+"      \    },
+"      \   'paste': {
+"      \      '+': 'pbpaste',
+"      \      '*': 'pbpaste',
+"      \   },
+"      \   'cache_enabled': 0,
+"      \ }
 
 
-let g:loaded_netrw  = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
+" let g:loaded_netrw  = 1
+" let g:loaded_netrwPlugin = 1
+" let g:loaded_netrwSettings = 1
+" let g:loaded_netrwFileHandlers = 1
+let g:netrw_browsex_viewer="xdg-open"
 
 vnoremap ` xi``<esc>hp
 vnoremap * xi**<esc>hp

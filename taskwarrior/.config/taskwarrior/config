@@ -1,0 +1,2 @@
+include /usr/share/doc/task/rc/light-256.theme
+verbose=blank,footnote,label,new-id,affected,edit,special,project,sync,unwait

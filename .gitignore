@@ -3,3 +3,4 @@ rclone/.config/rclone/rclone.conf
 newsboat/.config/newsboat/urls
 gcalcli/.config/gcalcli/oauth
 nvim/.config/nvim/plugged
+zsh/.config/zsh/.zcompdump

@@ -65,8 +65,8 @@ map n
 map R bulk-rename
 map x
 map x delete
-map nd push %mkdir<space>-p<space>
-map nf push %touch<space>
+map D push %mkdir<space>-p<space>
+map F push %touch<space>
 map ; shell
 map o open
 map <enter> open

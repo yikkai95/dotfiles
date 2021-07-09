@@ -1,0 +1,6 @@
+#!/bin/sh
+DIR=$HOME/repo/todo
+input=$(ls $DIR | dmenu -l 10 -i)
+if [[ -z $input ]]; then return; fi;
+title=$(input | sed 's/ /-/')
+st -c Capture -g "130x35+700+100" -e nvim $NOTESDIR/$input

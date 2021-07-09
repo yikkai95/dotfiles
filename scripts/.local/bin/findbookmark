@@ -1,0 +1,6 @@
+#!/bin/sh
+bookmark=$HOME/repo/notes/bookmark.md
+no=$(rg --line-number "^[a-zA-Z]" $bookmark | dmenu -l 30 -i | cut -d: -f1)
+[[ -z $no ]] && exit 0;
+no=$(($no + 1))
+surf $(sed -n "${no}p" $bookmark | cut -d$'\t' -f3)
