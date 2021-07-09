@@ -1,0 +1,12 @@
+#!/bin/sh
+
+while true; do
+  title=$(/usr/bin/osascript -l JavaScript -e "Application('Brave Browser').windows[0].tabs[0].title()")
+  amount=$(echo $title | cut -d" " -f 2 | cut -c 2-)
+  target=0.0000000280
+  if (( $(echo "$amount < $target" | bc -l) )); then
+    noti -m "$amount"
+  fi
+  echo $amount
+  sleep 5
+done
