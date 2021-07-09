@@ -4,7 +4,7 @@ autoload -U colors && colors	# Load colors
 export LC_ALL="en_US.UTF-8"
  
 # configuration
-ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
+#ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
 zle_highlight+=(paste:none) #remove hightlights when pasting
 #DISABLE_AUTO_TITLE="true"
 #
@@ -41,6 +41,8 @@ setopt globdots
 source $ZDOTDIR/.zsh_functions
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/plugins/fzf/fzf.zsh
+source $HOME/Repo/zsh-autopair/autopair.zsh
+autopair-init
 
 n() { $EDITOR $HOME/Documents/Wiki/index.md } 
 nls() { ls -c $HOME/Documents/Wiki | grep "$*" } 
