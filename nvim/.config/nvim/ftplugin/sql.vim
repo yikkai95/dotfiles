@@ -1,2 +1,0 @@
-
-call go#lsp#Setup()

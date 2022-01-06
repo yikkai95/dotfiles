@@ -1,5 +1,4 @@
-filetype plugin indent on 	" add filetype, plugin, and indent support
-" syntax on
+filetype plugin indent on
 set background=light
 set bs=2
 set clipboard=unnamedplus,unnamed
@@ -7,29 +6,28 @@ set cursorline
 set expandtab
 set foldlevel=20
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-set hidden  			" hide buffer instead of closing when open another file
+set hidden
 set hlsearch
-set ignorecase 			" ignore 
+set ignorecase
 set noshowmode
-set noswapfile                    " No swapfiles period.
-" set number                  " Line numbers on
-" set relativenumber          " Relative numbers on
-set shortmess=FIca "do not show message on intro and insert completion
-set splitright                  " open new split at right
-set wildcharm=<tab>  		" use tab to autocomplete vim command 
+set noswapfile
+set shortmess=FIca
+set splitright
+set wildcharm=<tab>
 set wildmode=longest,list,full 
 set laststatus=2
 set wildignore+=*/node_modules/*,*/ios/*,*/android/*
 set wildmenu
+set signcolumn=yes
 syntax off
-" set termguicolors           " Enable GUI colors for the terminal to get truecolor
+
 
 set background=light
-colorscheme PaperColor
+"colorscheme PaperColor
 
 
 vnoremap p "_dP
-tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc><Esc> <C-\><C-n>
 nnoremap <leader>rw :%s/\s\+$//e<cr>
 nnoremap <leader>rs :s/\<./\u&/g<cr>
 vnoremap [[ xi[]<esc>hp
@@ -79,7 +77,7 @@ nnoremap <leader>yp :let @+=expand("%:p")<cr>
 
 " Quick Find
 nnoremap <leader>F :Files<cr>
-nnoremap <leader>f :find <C-R>=expand("%:p:h")<cr>/*
+nnoremap <leader>f :find <C-R>=expand("%:p:h")<cr>/
 
 " Lines
 nnoremap <leader>L :BLines<cr>
@@ -118,31 +116,10 @@ noremap  <M-k> :m-2<CR>
 vnoremap <M-k> :m-2<CR>gv=gv
 vnoremap <M-j> :m'>+<CR>gv=gv
 
-" Custom Boomarks
-nnoremap <leader>1 :e $XDG_CACHE_HOME/pb.md<cr>
-" custom fzf function to open temporary file 
-nnoremap <silent> <leader>ma :!grep -Fxq %:p $XDG_CACHE_HOME/bf \|\| echo %:p >> $XDG_CACHE_HOME/bf<cr>
-nnoremap <leader>ml :call fzf#run({'source': 'cat $XDG_CACHE_HOME/bf', 'sink': 'e'})<cr>
-
-" Clipboard
-let g:clipboard = {
-      \   'name': 'macOS-clipboard',
-      \   'copy': {
-      \      '+': 'pbcopy',
-      \      '*': 'pbcopy',
-      \    },
-      \   'paste': {
-      \      '+': 'pbpaste',
-      \      '*': 'pbpaste',
-      \   },
-      \   'cache_enabled': 0,
-      \ }
-
-
-let g:loaded_netrw  = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
+let g:netrw_browsex_viewer="xdg-open"
 
 vnoremap ` xi``<esc>hp
 vnoremap * xi**<esc>hp
+
+nnoremap <leader>e <cmd>NnnPicker %:p:h<CR>
+nnoremap <leader>E <cmd>NnnPicker<CR>

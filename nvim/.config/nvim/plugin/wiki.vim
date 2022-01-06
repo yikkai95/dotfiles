@@ -1,4 +1,4 @@
-let g:wiki_root = '~/Documents/Wiki/'
+let g:wiki_root = '~/repo/notes/'
 let g:wiki_filetypes = ['md']
 let g:wiki_link_extension = '.md'
 let g:wiki_link_target_type = 'md'
