@@ -2,6 +2,7 @@ export UPDATE_ZSH_DAYS=1
 export LINES=10
 autoload -U colors && colors	# Load colors
 export LC_ALL="en_US.UTF-8"
+export NODE_PATH=$(npm root --quiet -g)
  
 # configuration
 ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
