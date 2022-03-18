@@ -17,12 +17,20 @@ Plug 'urbainvaes/vim-tmux-pilot'
 Plug 'sharat87/roast.vim'
 Plug 'ajgrf/parchment'
 Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'KimNorgaard/vim-frign'
+Plug 'chriskempson/base16-vim'
+Plug 'robertmeta/nofrils'
 call plug#end()
 
 
 set completeopt=menu,menuone,noselect
-colorscheme parchment
+"colo nofrils-light
+colo parchment
 set termguicolors 
+"set guifont=GoMono\ Nerd\ Font:h10
+set guifont=Terminus:h10
+let g:neovide_cursor_vfx_mode = "ripple"
+
 
 lua << EOF
 -- vim.g.rose_pine_variant = "dawn"
@@ -196,3 +204,7 @@ let g:pilot_key_k='<C-k>'
 let g:pilot_key_l='<C-l>'
 let g:pilot_key_p='<C-\>'
 hi FloatBorder guifg=white
+
+" system clipboard
+inoremap <c-v> <c-r>+
+cnoremap <c-v> <c-r>+

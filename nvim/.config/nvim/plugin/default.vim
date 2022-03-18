@@ -19,6 +19,7 @@ set laststatus=2
 set wildignore+=*/node_modules/*,*/ios/*,*/android/*
 set wildmenu
 set signcolumn=yes
+set mouse=a
 syntax off
 
 
