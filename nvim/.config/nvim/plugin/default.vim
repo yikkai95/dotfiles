@@ -18,7 +18,7 @@ set wildmode=longest,list,full
 set laststatus=2
 set wildignore+=*/node_modules/*,*/ios/*,*/android/*
 set wildmenu
-set signcolumn=yes
+set signcolumn=no
 set mouse=a
 syntax off
 
@@ -64,12 +64,12 @@ vnoremap <leader>j 5j
 vnoremap <leader>k 5k
 
 " File Path Shortcuts
-cnoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
-tnoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
-inoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
-cnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
-tnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
-inoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+"cnoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
+"tnoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
+" inoremap <Leader>fp <C-R>=expand("%:p:h")<CR>
+"cnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+"tnoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+"inoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
 nnoremap <leader>yp :let @+=expand("%:p")<cr>
 nnoremap <leader>yn :let @+=expand("%:t:r")<cr>
 nnoremap <leader>yd :let @+=expand("%:p:h")<cr>
@@ -122,5 +122,5 @@ let g:netrw_browsex_viewer="xdg-open"
 vnoremap ` xi``<esc>hp
 vnoremap * xi**<esc>hp
 
-nnoremap <leader>e <cmd>NnnPicker %:p:h<CR>
+nnoremap <leader>e <cmd>NnnPicker %<CR>
 nnoremap <leader>E <cmd>NnnPicker<CR>

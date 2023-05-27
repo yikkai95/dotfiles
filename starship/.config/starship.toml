@@ -7,3 +7,10 @@ $git_commit\
 $git_state\
 $git_status
 $character"""
+
+[character]
+format = '$symbol '
+success_symbol = '[❯](bold black)'
+error_symbol = '[❯](bold black)'
+vicmd_symbol = '[❮](bold black)'
+disabled = false
