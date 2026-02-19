@@ -1,3 +1,9 @@
+theme = Apple System Colors Light
 font-family = Iosevka Nerd Font Mono
 font-size = 14
 font-feature = "+liga"
+
+desktop-notifications = true
+bell-features = system,title,attention
+
+macos-option-as-alt = true
