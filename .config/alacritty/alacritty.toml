@@ -1,0 +1,11 @@
+
+[font]
+normal = { family = "Iosevka Nerd Font Mono", style = "Regular" }
+bold = { family = "Iosevka Nerd Font Mono", style = "Bold" }
+italic = { family = "Iosevka Nerd Font Mono", style = "Italic" }
+size = 14.0
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001b\r"
