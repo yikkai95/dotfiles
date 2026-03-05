@@ -1,13 +1,13 @@
 ---
 name: note
-description: Create a new note in the Obsidian vault at ~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vault. Prompts for title and content, then writes a properly formatted markdown file to the vault root.
+description: Create a new note in the Obsidian vault at ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault. Prompts for title and content, then writes a properly formatted markdown file to the vault root.
 ---
 
-Create a new note in the Obsidian vault at `~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vault/`.
+Create a new note in the Obsidian vault at `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault/`.
 
 ## Vault Rules
 
-- **Always write to vault root** (`~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vault/`) — never to subfolders like `Notes/`, `References/`, etc., unless the note is explicitly a Person (`People/`), Clipping (`Clippings/`), or Daily note (`Daily/`)
+- **Always write to vault root** (`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault/`) — never to subfolders like `Notes/`, `References/`, etc., unless the note is explicitly a Person (`People/`), Clipping (`Clippings/`), or Daily note (`Daily/`)
 - **Filename format**: `YYYY-MM-DD HHMM Title.md` — get the current date and time via `date +"%Y-%m-%d %H%M"` before creating
 - **Frontmatter**: minimal or none for quick captures
 - **Links**: use `[[wiki-links]]` generously to connect related ideas, people, and categories — always inline them in the prose, never as a standalone list at the footer
@@ -30,7 +30,7 @@ Use this for both the filename and the `created` frontmatter field (date portion
 
 ## Step 3 — Write the note
 
-Write to `~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vault/YYYY-MM-DD HHMM <Title>.md`.
+Write to `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault/YYYY-MM-DD HHMM <Title>.md`.
 
 Use this frontmatter if the note warrants it (skip if it's a raw brain dump):
 
