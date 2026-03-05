@@ -43,7 +43,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -n -a Ghostty"
+                                        "shell_command": "osascript -e 'if application \"Ghostty\" is running then' -e 'tell application \"System Events\" to tell process \"Ghostty\" to keystroke \"n\" using command down' -e 'end if' -e 'tell application \"Ghostty\" to activate'"
                                     }
                                 ],
                                 "type": "basic"
