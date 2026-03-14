@@ -1,0 +1,8 @@
+#!/bin/sh
+osascript -e "
+  tell application \"Ghostty\"
+    set cfg to new surface configuration
+    set command of cfg to \"/opt/homebrew/bin/nvim $*\"
+    set t to terminal 1 of selected tab of front window
+    split t direction right with configuration cfg
+  end tell"
