@@ -1,0 +1,271 @@
+#!/bin/sh
+# mdsite — render markdown to static HTML, with PlantUML support.
+#
+# Usage:
+#   mdsite [-s|--serve] [-o OUTDIR] [DIR|FILE.md]
+#   mdsite install-app
+#
+# DIR          source directory (default: current directory) — walks all .md files
+# FILE.md      single markdown file — renders only that file, no index
+# -o           output directory (default: $DIR/out)
+# -s           after building, serve OUTDIR on :8000
+# install-app  build ~/Applications/mdsite.app and register it as the default
+#              handler for .md files via duti (one-time per machine)
+#
+# Requires: lowdown, plantuml, awk, python3 (only for --serve),
+#           osacompile + duti (only for install-app).
+
+set -eu
+
+install_app() {
+  app="$HOME/Applications/mdsite.app"
+  mkdir -p "$HOME/Applications"
+
+  command -v osacompile >/dev/null || { echo "mdsite: osacompile not found" >&2; exit 1; }
+  command -v duti       >/dev/null || { echo "mdsite: duti not found (brew install duti)" >&2; exit 1; }
+
+  tmpscript=$(mktemp)
+  # shellcheck disable=SC2064
+  trap "rm -f '$tmpscript'" EXIT
+
+  cat > "$tmpscript" <<'APPLESCRIPT'
+on open theFiles
+	repeat with f in theFiles
+		set posixPath to POSIX path of f
+		try
+			do shell script "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin\"; mdsite " & quoted form of posixPath
+		on error errMsg
+			display alert "mdsite" message errMsg
+		end try
+	end repeat
+end open
+
+on run
+	display alert "mdsite" message "Open a .md file with this app from Finder."
+end run
+APPLESCRIPT
+
+  rm -rf "$app"
+  osacompile -o "$app" "$tmpscript"
+
+  plist="$app/Contents/Info.plist"
+  pb=/usr/libexec/PlistBuddy
+
+  "$pb" -c "Delete :CFBundleDocumentTypes"                                                 "$plist" 2>/dev/null || true
+  "$pb" -c "Add :CFBundleDocumentTypes array"                                              "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0 dict"                                             "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeName string 'Markdown Document'"      "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeRole string Viewer"                   "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:LSHandlerRank string Alternate"                   "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeExtensions array"                     "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeExtensions:0 string md"               "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeExtensions:1 string markdown"         "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeExtensions:2 string mdown"            "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:LSItemContentTypes array"                         "$plist"
+  "$pb" -c "Add :CFBundleDocumentTypes:0:LSItemContentTypes:0 string net.daringfireball.markdown" "$plist"
+
+  "$pb" -c "Delete :CFBundleIdentifier"                            "$plist" 2>/dev/null || true
+  "$pb" -c "Add :CFBundleIdentifier string local.yikkai.mdsite"    "$plist"
+
+  codesign --force --deep --sign - "$app" >/dev/null 2>&1 || true
+
+  lsreg="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"
+  "$lsreg" -f "$app"
+
+  duti -s local.yikkai.mdsite .md all
+  duti -s local.yikkai.mdsite net.daringfireball.markdown all 2>/dev/null || true
+
+  echo "mdsite: installed $app as default handler for .md"
+}
+
+if [ "${1:-}" = "install-app" ]; then
+  shift
+  install_app
+  exit 0
+fi
+
+serve=0
+out=""
+src=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -s|--serve) serve=1; shift ;;
+    -o)         out="$2"; shift 2 ;;
+    -h|--help)  sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    --)         shift; break ;;
+    -*)         echo "mdsite: unknown flag $1" >&2; exit 2 ;;
+    *)          src="$1"; shift ;;
+  esac
+done
+
+src="${src:-.}"
+single_file=""
+if [ -f "$src" ] && [ "${src##*.}" = "md" ]; then
+  single_file=$(basename "$src")
+  src=$(cd "$(dirname "$src")" && pwd)
+elif [ -d "$src" ]; then
+  src=$(cd "$src" && pwd)
+else
+  echo "mdsite: not a file or directory: $src" >&2; exit 1
+fi
+out="${out:-$src/out}"
+mkdir -p "$out"
+
+command -v lowdown  >/dev/null || { echo "mdsite: lowdown not found (brew install lowdown)"   >&2; exit 1; }
+command -v plantuml >/dev/null || { echo "mdsite: plantuml not found (brew install plantuml)" >&2; exit 1; }
+
+render_one() {
+  in=$1; rel=$2; title=$3
+  tmp=$(mktemp -d)
+  trap 'rm -rf "$tmp"' RETURN 2>/dev/null || true
+
+  awk -v tmp="$tmp" '
+    BEGIN { n = 0; in_uml = 0 }
+    /^```plantuml[[:space:]]*$/ { in_uml = 1; buf = ""; next }
+    in_uml && /^```[[:space:]]*$/ {
+      n++; path = tmp "/b-" n ".svg"
+      cmd = "plantuml -tsvg -pipe > " path
+      printf "%s", buf | cmd; close(cmd)
+      print "<div class=\"plantuml\">"
+      while ((getline line < path) > 0) print line
+      close(path)
+      print "</div>"
+      in_uml = 0; next
+    }
+    in_uml { buf = buf $0 "\n"; next }
+    { print }
+  ' "$in" > "$tmp/body.md"
+
+  body=$(lowdown --html-no-skiphtml --html-no-escapehtml "$tmp/body.md")
+  depth=$(echo "$rel" | awk -F/ '{ if (NF>1) for (i=1;i<NF;i++) printf "../"; else printf "" }')
+
+  reload=""
+  if [ "${MDSITE_RELOAD:-0}" = "1" ]; then
+    reload='<script>(function(){let l=null;setInterval(async()=>{try{const r=await fetch(location.href,{method:"HEAD",cache:"no-store"});const m=r.headers.get("last-modified");if(l&&m!==l)location.reload();l=m}catch(e){}},500)})()</script>'
+  fi
+
+  cat <<HTML
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>$title</title>
+<link rel="stylesheet" href="${depth}style.css">
+</head>
+<body>
+<main>
+$([ -z "$single_file" ] && printf '<nav><a href="%sindex.html">← index</a></nav>' "$depth")
+$body
+</main>
+$reload
+</body>
+</html>
+HTML
+
+  rm -rf "$tmp"
+}
+
+# Walk all .md files (excluding anything already in the out dir).
+# Using find -print0 would be safer but BSD/macOS awk has no gsub on \0.
+cd "$src"
+if [ -n "$single_file" ]; then
+  files="$single_file"
+else
+  files=$(find . -type f -name '*.md' -not -path "./$(basename "$out")/*" | sed 's|^\./||' | sort)
+fi
+
+for rel in $files; do
+  dest="$out/${rel%.md}.html"
+  mkdir -p "$(dirname "$dest")"
+  render_one "$src/$rel" "$rel" "${rel%.md}" > "$dest"
+done
+
+# style.css
+cat > "$out/style.css" <<'CSS'
+body{font:16px/1.6 system-ui,-apple-system,sans-serif;max-width:56rem;margin:2rem auto;padding:0 1rem;color:#222}
+pre,code{font-family:ui-monospace,Menlo,monospace}
+pre{background:#f4f4f4;padding:.75rem;overflow:auto;border-radius:4px}
+code{background:#f4f4f4;padding:.1em .3em;border-radius:3px;font-size:.92em}
+pre code{background:none;padding:0;font-size:inherit}
+a{color:#06c;text-decoration:none}a:hover{text-decoration:underline}
+.plantuml{margin:1.5rem 0;text-align:center}
+.plantuml svg{max-width:100%;height:auto}
+h1,h2,h3{line-height:1.2}
+h2{border-bottom:1px solid #eaeaea;padding-bottom:.3em;margin-top:2em}
+h3{margin-top:1.5em}
+hr{border:0;border-top:1px solid #ddd;margin:2rem 0}
+nav{font-size:.9rem;margin-bottom:1rem;color:#888}
+ul.tree{list-style:none;padding-left:1rem}
+ul.tree li{margin:.2rem 0}
+table{border-collapse:collapse;margin:1rem 0;font-size:.92em;width:100%;display:block;overflow-x:auto}
+th,td{border:1px solid #d0d7de;padding:.4em .75em;text-align:left;vertical-align:top}
+th{background:#f6f8fa;font-weight:600}
+tr:nth-child(2n) td{background:#fafbfc}
+blockquote{border-left:4px solid #d0d7de;margin:1em 0;padding:0 1em;color:#57606a}
+CSS
+
+# index.html — use index.md if present (already rendered above); otherwise
+# auto-generate a hierarchical listing. Skipped in single-file mode.
+if [ -z "$single_file" ]; then
+  if [ ! -f "$src/index.md" ] && [ ! -f "$src/README.md" ]; then
+    {
+      printf '%s\n' \
+        '<!doctype html><html lang=en><head><meta charset=utf-8>' \
+        "<title>$(basename "$src")</title>" \
+        '<link rel=stylesheet href=style.css></head><body><main>' \
+        "<h1>$(basename "$src")</h1><ul class=tree>"
+      for rel in $files; do
+        printf '<li><a href="%s.html">%s</a></li>\n' "${rel%.md}" "$rel"
+      done
+      printf '%s\n' '</ul></main></body></html>'
+    } > "$out/index.html"
+  elif [ -f "$src/README.md" ] && [ ! -f "$src/index.md" ]; then
+    cp "$out/README.html" "$out/index.html"
+  fi
+fi
+
+count=$(printf '%s\n' "$files" | grep -c . || true)
+echo "mdsite: built $count file(s) → $out"
+
+if [ "$serve" -eq 1 ]; then
+  # Re-build with reload snippet injected (initial build above didn't know).
+  if [ -n "$single_file" ]; then
+    MDSITE_RELOAD=1 mdsite -o "$out" "$src/$single_file" >/dev/null
+    landing="${single_file%.md}.html"
+  else
+    MDSITE_RELOAD=1 mdsite -o "$out" "$src" >/dev/null
+    landing=""
+  fi
+
+  echo "mdsite: serving $out on http://localhost:8000/$landing"
+  (sleep 0.3 && open "http://localhost:8000/$landing") &
+
+  if command -v entr >/dev/null; then
+    (
+      cd "$src"
+      out_name=$(basename "$out")
+      while :; do
+        if [ -n "$single_file" ]; then
+          echo "$single_file" \
+            | MDSITE_RELOAD=1 entr -nd sh -c "mdsite -o '$out' '$src/$single_file' >&2" || true
+        else
+          find . -type f -name '*.md' -not -path "./$out_name/*" \
+            | MDSITE_RELOAD=1 entr -nd sh -c "mdsite -o '$out' '$src' >&2" || true
+        fi
+      done
+    ) &
+    watcher=$!
+    trap 'kill $watcher 2>/dev/null' EXIT INT TERM
+  else
+    echo "mdsite: entr not installed — no hot reload (brew install entr)" >&2
+  fi
+
+  cd "$out" && exec python3 -m http.server 8000
+else
+  if [ -n "$single_file" ]; then
+    open "$out/${single_file%.md}.html"
+  else
+    open "$out/index.html"
+  fi
+fi

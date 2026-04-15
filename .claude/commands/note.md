@@ -1,17 +1,19 @@
 ---
 name: note
-description: Create a new note in the Obsidian vault at ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault. Prompts for title and content, then writes a properly formatted markdown file to the vault root.
+description: Create a new capture note in the Obsidian vault at raw/ using the `obsidian` CLI. Prompts for title and content, then creates a properly formatted markdown file via `obsidian create`.
 ---
 
-Create a new note in the Obsidian vault at `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault/`.
+Create a new capture note in the Obsidian vault using the `obsidian` CLI (binary at `/Applications/Obsidian.app/Contents/MacOS/obsidian`, already on PATH).
 
-## Vault Rules
+**Vault location:** `/Users/yikkai/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault`
 
-- **Always write to vault root** (`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault/`) — never to subfolders like `Notes/`, `References/`, etc., unless the note is explicitly a Person (`People/`), Clipping (`Clippings/`), or Daily note (`Daily/`)
-- **Filename format**: `YYYY-MM-DD HHMM Title.md` — get the current date and time via `date +"%Y-%m-%d %H%M"` before creating
-- **Frontmatter**: minimal or none for quick captures
-- **Links**: use `[[wiki-links]]` generously to connect related ideas, people, and categories — always inline them in the prose, never as a standalone list at the footer
-- **Categories**: always plural (e.g. `[[Projects]]`, `[[Ideas]]`, not `[[Project]]`)
+## Rules
+
+- **Always write to `raw/`** — captures live at `raw/<filename>.md`, never deeper subfolders, never vault root
+- **Filename format**: `YYYY-MM-DD HHMM Title.md` — 4-digit time required
+- **Frontmatter**: `created` only. Optionally `source` if the note came from a specific URL. Do NOT add `related`, `categories`, or any other fields — the wiki linter will fill those in later with full vault context.
+- **Do NOT add `[[wiki-links]]`** unless the user typed them in the content themselves. Linking is the linter's job, not the capture step's.
+- **Do NOT create linked notes or stubs** — just create the single capture note and stop
 
 ## Step 1 — Get title and content
 
@@ -28,50 +30,47 @@ date +"%Y-%m-%d %H%M"
 
 Use this for both the filename and the `created` frontmatter field (date portion only: `YYYY-MM-DD`).
 
-## Step 3 — Write the note
+## Step 3 — Create the note via `obsidian create`
 
-Write to `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault/YYYY-MM-DD HHMM <Title>.md`.
+`obsidian create` writes a file at the exact vault-relative `path=` you give it. Use `\n` for newlines inside `content=` — the CLI interprets the escapes, not the shell, so wrap `content=` in **single quotes** to prevent shell expansion.
 
-Use this frontmatter if the note warrants it (skip if it's a raw brain dump):
+Bake the frontmatter into `content=` directly, and prefix the path with `raw/`:
 
-```yaml
----
-created: YYYY-MM-DD
----
+```bash
+obsidian create \
+  path="raw/2026-04-10 1900 My Title.md" \
+  content='---\ncreated: 2026-04-10\n---\n\nBody goes here verbatim from the user.'
 ```
 
-Format the body cleanly in markdown. Add `[[wiki-links]]` where relevant — link to people, topics, categories, or other notes you know exist in the vault.
+Frontmatter fields:
 
-## Step 4 — Create linked notes
+- **`created`** — `YYYY-MM-DD` from Step 2. Required.
+- **`source`** — optional URL if the note is derived from a specific external source. **Omit the property entirely** if there is no source — don't leave a placeholder.
 
-After writing the main note, check every `[[wiki-link]]` used. If the linked note doesn't already exist in the vault, create it:
+That's it. No `related`, no `categories`, no tags. The wiki linter handles all linking and categorization downstream.
 
-- **References** (specific topics, tools, people, concepts) → `References/<Name>.md` — include a short description and `created` frontmatter
-- **Categories** (plural grouping labels like `[[Tools]]`, `[[Terminals]]`) → `Categories/<Name>.md` with this format:
+Escaping notes:
 
-```yaml
----
-tags:
-  - categories
----
+- Single-quote the whole `content=` value so the shell leaves `\n` and `"` alone.
+- Inner double quotes (e.g. `"[[Foo]]"` in YAML lists) stay as-is inside single quotes.
+- If the title contains a single quote, switch to double quotes for `content=` and escape the inner double quotes as `\"`.
+- For very long bodies, prefer a heredoc-built variable:
+  ```bash
+  CONTENT=$(printf '%s' '---\ncreated: 2026-04-10\n...---\n\nBody...')
+  obsidian create path="raw/2026-04-10 1900 My Title.md" content="$CONTENT"
+  ```
 
-![[<Name>.base]]
+Fallback — if escaping the content is too gnarly, create the file with a body only and set frontmatter via `property:set`:
+
+```bash
+obsidian create path="raw/2026-04-10 1900 My Title.md" content='Body here.'
+obsidian property:set path="raw/2026-04-10 1900 My Title.md" name=created value="2026-04-10" type=date
 ```
 
-For new **Categories**, also check if a matching `<Name>.base` file exists in the vault root. If not, create one:
+## Step 4 — Confirm
 
-```yaml
-filters:
-  and:
-    - categories.contains(link("<Name>"))
-    - '!file.name.contains("Template")'
-views:
-  - type: table
-    name: Table
-```
+Report the full absolute path of the created note:
 
-Use `ls` or `Glob` to check existence before creating.
+`/Users/yikkai/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault/raw/<filename>.md`
 
-## Step 5 — Confirm
-
-Tell the user the full file path of the created note and list any linked notes that were created.
+That's it. Do not check or create any linked notes.
