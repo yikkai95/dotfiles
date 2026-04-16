@@ -101,14 +101,14 @@ _gh_stars_daily
 
 # Ctrl+V: if clipboard has an image, save it and insert the file path.
 # Otherwise, fall back to quoted-insert (default ^V behavior).
-_clip-img-paste() {
-  local path
-  path=$(/Users/yikkai/.local/bin/clip-img 2>/dev/null)
-  if [[ $? -eq 0 && -n "$path" ]]; then
-    LBUFFER+="$path"
-  else
-    zle quoted-insert
-  fi
-}
-zle -N _clip-img-paste
-bindkey '^V' _clip-img-paste
+# _clip-img-paste() {
+#   local path
+#   path=$(/Users/yikkai/.local/bin/clip-img 2>/dev/null)
+#   if [[ $? -eq 0 && -n "$path" ]]; then
+#     LBUFFER+="$path"
+#   else
+#     zle quoted-insert
+#   fi
+# }
+# zle -N _clip-img-paste
+# bindkey '^V' _clip-img-paste
